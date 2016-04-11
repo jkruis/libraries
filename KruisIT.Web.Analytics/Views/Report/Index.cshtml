@@ -1,0 +1,22 @@
+﻿@model KruisIT.Web.Analytics.Models.CurrentList<string>
+@{
+	ViewBag.Title = "Analytics";
+}
+
+<link rel="stylesheet" href="@(ViewBag.Url)Resource/analytics^css">
+
+<div class="analytics-block">
+	<h2>
+		@ViewBag.Title
+		<small>
+			@if (!String.IsNullOrEmpty(Model.Filter.Website)) { <text>Website: @Model.Filter.Website ,</text> }
+			@if (!String.IsNullOrEmpty(Model.Filter.Location)) { <text>Location: @Model.Filter.Location ,</text> }
+			@if (!String.IsNullOrEmpty(Model.Filter.Visitor)) { <text>Visitor: @Model.Filter.Visitor</text> }
+		</small>
+	</h2>
+
+	@foreach (var site in Model.Data)
+	{
+		@Html.Action("Website", new { website = site, location = Model.Filter.Location, visitor = Model.Filter.Visitor })
+	}
+</div>

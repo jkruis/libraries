@@ -1,0 +1,15 @@
+﻿@model KruisIT.Web.Analytics.Models.CurrentList<KruisIT.Web.Analytics.Models.Location>
+@{
+	Layout = null;
+}
+
+<div class="analytics-locations">
+	<h4>Locations</h4>
+
+	<ul>
+		@foreach (var location in Model.Data)
+		{
+			<li>@Html.ActionLink(location.Url, "Index", new { website = location.Website, location = location.Url, visitor = Model.Filter.Visitor }, null)</li>
+		}
+	</ul>
+</div>

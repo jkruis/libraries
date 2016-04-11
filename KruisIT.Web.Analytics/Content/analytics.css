@@ -1,0 +1,15 @@
+﻿
+.analytics-aggregates .analytics-count { width: 300px; }
+	.analytics-aggregates .analytics-count div { background-color: #cce; }
+		.analytics-aggregates .analytics-count span { padding-left: 4px; }
+	.analytics-aggregates .analytics-date { padding-right: 1em; }
+
+.analytics-aggregates { border: 1px solid #eee; padding: 20px; }
+	.analytics-aggregates h4 { display: none; }
+
+.analytics-aggregates-rotated { height: 430px; }
+	.analytics-aggregates-rotated table { margin-top: 150px; margin-bottom: 150px; transform-origin: 0 0; transform: rotate(-90deg) translate(-250px, 0); }
+		.analytics-aggregates-rotated table thead { display: none; }
+
+
+.analytics-locations li { }

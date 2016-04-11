@@ -1,0 +1,37 @@
+﻿@model KruisIT.Web.Analytics.Models.CurrentList<KruisIT.Web.Analytics.Models.Aggregate>
+@{
+	Layout = null;
+
+	int maxCount = Model.Data.Any() ? Model.Data.Max(m => m.Count) : 0;
+}
+
+<div class="analytics-aggregates analytics-aggregates-rotated">
+	<h4>Aggregates</h4>
+
+	<table>
+		<thead>
+			<tr>
+				<th>@Html.DisplayNameFor(model => model.Data.FirstOrDefault().Date)</th>
+				@if (null == Model.Data.FirstOrDefault() || null != Model.Data.FirstOrDefault().Location)
+				{
+					<th>@Html.DisplayNameFor(model => model.Data.FirstOrDefault().Location)</th>
+				}
+				<th>@Html.DisplayNameFor(model => model.Data.FirstOrDefault().Count)</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var agg in Model.Data)
+			{
+				var width = 100 * agg.Count / maxCount;
+				<tr>
+					<td class="analytics-date">@agg.Date.ToString("yyyy-MM-dd")</td>
+					@if (null != Model.Data.FirstOrDefault().Location)
+					{
+						<td>@agg.Location</td>
+					}
+					<td class="analytics-count"><div style="width: @(width)%"><span>@agg.Count</span></div></td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
