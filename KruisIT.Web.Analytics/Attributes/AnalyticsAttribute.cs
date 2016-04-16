@@ -33,7 +33,9 @@ namespace KruisIT.Web.Analytics.Attributes
 					StartTime = DateTime.UtcNow,
 					IpAddress = filterContext.HttpContext.Request.UserHostAddress,
 					Website = Website,
-					Location = filterContext.HttpContext.Request.RawUrl
+					Location = filterContext.HttpContext.Request.RawUrl,
+					UserAgent = filterContext.HttpContext.Request.UserAgent,
+					Referrer = (null != filterContext.HttpContext.Request.UrlReferrer) ? filterContext.HttpContext.Request.UrlReferrer.AbsoluteUri : null
 				};
 
 				db = new AnalyticsDb(NameOrConnectionString);

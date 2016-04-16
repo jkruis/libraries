@@ -56,7 +56,7 @@ WriteAttribute("href", Tuple.Create(" href=\"", 119), Tuple.Create("\"", 162)
             #line default
             #line hidden
 , 126), false)
-, Tuple.Create(Tuple.Create("", 140), Tuple.Create("Resource/analytics^css", 140), true)
+, Tuple.Create(Tuple.Create("", 140), Tuple.Create("Resource/analytics_css", 140), true)
 );
 
 WriteLiteral(">\r\n\r\n<div");

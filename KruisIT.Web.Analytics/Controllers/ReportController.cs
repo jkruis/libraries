@@ -10,9 +10,9 @@ using System.Web.Mvc;
 
 namespace KruisIT.Web.Analytics.Controllers
 {
-	// todo : combine with known users/ip-addresses, if possible.
+	// todo : adds RazorGeneratorMvcStart to projects when the package is installed. shouldn't!
 
-	// todo : breaks when url does not end in /
+	// todo : combine with known users/ip-addresses, if possible.
 
 	public class ReportController : Controller
 	{
@@ -39,6 +39,11 @@ namespace KruisIT.Web.Analytics.Controllers
 			if (url.Contains("#")) url = url.Substring(0, url.IndexOf("#"));
 			if (!url.EndsWith("/")) url += "/";
 			ViewBag.Url = url;
+		}
+
+		public string Test()
+		{
+			return "test";
 		}
 
 		ViewResult FindView(string name, object model)
@@ -113,7 +118,7 @@ namespace KruisIT.Web.Analytics.Controllers
 
 		public FileStreamResult Resource(string id)
 		{
-			id = id.Replace("^", ".");
+			id = id.Replace("_", ".");
 
 			string resourceName = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames().ToList().FirstOrDefault(f => f.EndsWith(id));
 			return new FileStreamResult(System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName), GetMIMEType(id));

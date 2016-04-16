@@ -27,5 +27,8 @@ namespace KruisIT.Web.Analytics.Models
 		[Required]
 		[MaxLength(2000)]
 		public string Location { get; set; }
+
+		public string UserAgent { get; set; }
+		public string Referrer { get; set; }
 	}
 }

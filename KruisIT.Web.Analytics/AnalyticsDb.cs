@@ -11,6 +11,9 @@ namespace KruisIT.Web.Analytics
 	{
 		public AnalyticsDb(string NameOrConnectionString) : base(NameOrConnectionString) { }
 
+		// for making migrations only
+		public AnalyticsDb() : base(@"Data Source=WIN-EG3CNDSH5RQ\SQL2012;Initial Catalog=KruisIT.Web.Analytics;User Id=dev;Password=dev;MultipleActiveResultSets=True;") { }
+
 		public DbSet<Models.Visit> Analytics_Visits { get; set; }
 
 		public List<Models.Aggregate> GetVisitsByDay(string website, string location, string visitor)

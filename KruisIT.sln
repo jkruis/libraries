@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KruisIT.Xml.Test", "KruisIT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KruisIT.Web.Analytics", "KruisIT.Web.Analytics\KruisIT.Web.Analytics.csproj", "{9EC4BBB3-B3F0-42D0-A38C-65D9763500E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KruisIT.Web.Analytics.Client", "KruisIT.Web.Analytics.Client\KruisIT.Web.Analytics.Client.csproj", "{73BAF938-A1B1-4A1E-8A5A-2AAE2B4DF1B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{9EC4BBB3-B3F0-42D0-A38C-65D9763500E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EC4BBB3-B3F0-42D0-A38C-65D9763500E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EC4BBB3-B3F0-42D0-A38C-65D9763500E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73BAF938-A1B1-4A1E-8A5A-2AAE2B4DF1B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73BAF938-A1B1-4A1E-8A5A-2AAE2B4DF1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73BAF938-A1B1-4A1E-8A5A-2AAE2B4DF1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73BAF938-A1B1-4A1E-8A5A-2AAE2B4DF1B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,5 +67,6 @@ Global
 		{949653C0-F69C-4133-A4AB-5B8776A24B93} = {9AD8CBCF-3336-4FB4-B4A9-5615ECFF7C6F}
 		{B45CF4E7-F498-410A-B101-2941BAA27CEC} = {9AD8CBCF-3336-4FB4-B4A9-5615ECFF7C6F}
 		{3E53C653-0E7B-4CA9-9F46-4A6379960AFD} = {9AD8CBCF-3336-4FB4-B4A9-5615ECFF7C6F}
+		{73BAF938-A1B1-4A1E-8A5A-2AAE2B4DF1B3} = {9AD8CBCF-3336-4FB4-B4A9-5615ECFF7C6F}
 	EndGlobalSection
 EndGlobal

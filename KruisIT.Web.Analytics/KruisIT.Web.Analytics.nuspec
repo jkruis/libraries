@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>KruisIT.Web.Analytics</id>
+    <version>$version$</version>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>http://kruisit.nl/packages/kruisit.web.analytics</projectUrl>
+    <description>$description$</description>
+    <releaseNotes>
+1.2.1 Initial release
+    </releaseNotes>
+    <copyright>Copyright 2016</copyright>
+  </metadata>
+</package>
