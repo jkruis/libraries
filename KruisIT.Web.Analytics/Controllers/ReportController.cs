@@ -34,11 +34,8 @@ namespace KruisIT.Web.Analytics.Controllers
 		{
 			base.OnActionExecuting(filterContext);
 
-			string url = filterContext.RequestContext.HttpContext.Request.RawUrl;
-			if (url.Contains("?")) url = url.Substring(0, url.IndexOf("?"));
-			if (url.Contains("#")) url = url.Substring(0, url.IndexOf("#"));
-			if (!url.EndsWith("/")) url += "/";
-			ViewBag.Url = url;
+			string controllerName = this.ControllerContext.RouteData.Values["controller"].ToString();
+			ViewBag.Url = "/" + controllerName + "/";
 		}
 
 		public string Test()
