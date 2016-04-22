@@ -20,8 +20,15 @@ namespace KruisIT.Web.Analytics
 
 		public List<Models.Aggregate> GetVisitsByDay(string website, string location, string visitor)
 		{
-			// todo : fix for null value
-			string sql = String.Format("select cast(StartTime as date) as [Date], count(*) as [Count], null as Location from Analytics_Visits where Website = '{0}'", website);
+			string sql = "select cast(StartTime as date) as [Date], count(*) as [Count], null as Location from Analytics_Visits";
+			if (!String.IsNullOrEmpty(website))
+			{
+				sql += String.Format(" where Website = '{0}'", website);
+			}
+			else
+			{
+				sql += " where Website is null";
+			}
 
 			if (!String.IsNullOrEmpty(location)) {
 				sql += String.Format(" and Location = '{0}'", location);
