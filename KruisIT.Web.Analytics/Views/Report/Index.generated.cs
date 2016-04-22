@@ -59,7 +59,7 @@ WriteAttribute("href", Tuple.Create(" href=\"", 119), Tuple.Create("\"", 162)
 , Tuple.Create(Tuple.Create("", 140), Tuple.Create("Resource/analytics_css", 140), true)
 );
 
-WriteLiteral(">\r\n\r\n<div");
+WriteLiteral(" />\r\n\r\n<div");
 
 WriteLiteral(" class=\"analytics-block\"");
 
