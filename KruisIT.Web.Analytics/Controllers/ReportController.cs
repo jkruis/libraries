@@ -87,6 +87,7 @@ namespace KruisIT.Web.Analytics.Controllers
 
 		public ActionResult Visitors(Models.Filter filter)
 		{
+			// todo : filter on filter.Days
 			var visitors = db.Analytics_Visits.Where(v => v.Website == filter.Website && (filter.Location == null || filter.Location == v.Location) && (filter.Visitor == null || filter.Visitor == v.IpAddress)).Select(v => new Models.Visitor() { Address = v.IpAddress, Website = filter.Website }).Distinct().OrderBy(v => v).ToList();
 			Models.CurrentList<Models.Visitor> model = new Models.CurrentList<Models.Visitor>() { Filter = filter, Data = visitors };
 
@@ -95,17 +96,21 @@ namespace KruisIT.Web.Analytics.Controllers
 
 		public ActionResult Locations(Models.Filter filter)
 		{
+			// todo : filter on filter.Days
 			var locations = db.Analytics_Visits.Where(v => v.Website == filter.Website && (filter.Location == null || filter.Location == v.Location) && (filter.Visitor == null || filter.Visitor == v.IpAddress)).Select(v => new Models.Location() { Url = v.Location, Website = filter.Website }).Distinct().OrderBy(l => l).ToList();
 			Models.CurrentList<Models.Location> model = new Models.CurrentList<Models.Location>() { Filter = filter, Data = locations };
 
 			return FindView("Locations", model);
 		}
 
+		// todo : show date label for first day, then at 25%, 50%, 75% and last
+		// todo : add UI for selecting period
 		public ActionResult Aggregates(Models.Filter filter)
 		{
-			if (0 == filter.Days) filter.Days = 35;
+			if (null == filter.EndDate) filter.EndDate = DateTime.Now;
+			if (null == filter.StartDate) filter.StartDate = filter.EndDate.Value.AddDays(-35);
 
-			var aggregates = db.GetVisitsByDay(filter.Days, filter.Website, filter.Location, filter.Visitor);
+			var aggregates = db.GetVisitsByDay(filter.StartDate.Value, filter.EndDate.Value, filter.Website, filter.Location, filter.Visitor);
 
 			Models.CurrentList<Models.Aggregate> model = new Models.CurrentList<Models.Aggregate>() { Filter = filter, Data = aggregates };
 

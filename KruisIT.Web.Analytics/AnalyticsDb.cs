@@ -18,7 +18,7 @@ namespace KruisIT.Web.Analytics
 
 		public DbSet<Models.Visit> Analytics_Visits { get; set; }
 
-		public List<Models.Aggregate> GetVisitsByDay(int days, string website, string location, string visitor)
+		public List<Models.Aggregate> GetVisitsByDay(DateTime startDate, DateTime endDate, string website, string location, string visitor)
 		{
 			string sql = "select cast(StartTime as date) as [Date], count(*) as [Count], null as Location from Analytics_Visits";
 			if (!String.IsNullOrEmpty(website))
@@ -29,6 +29,8 @@ namespace KruisIT.Web.Analytics
 			{
 				sql += " where Website is null";
 			}
+
+			sql += String.Format(" and StartTime > '{0}' and StartTime < '{1}'", startDate.ToString("yyyy-MM-dd"), endDate.ToString("yyyy-MM-dd") + " 23:59:59");
 
 			if (!String.IsNullOrEmpty(location)) {
 				sql += String.Format(" and Location = '{0}'", location);
@@ -49,7 +51,17 @@ namespace KruisIT.Web.Analytics
 				}
 			}
 
-			aggregates = aggregates.Skip(aggregates.Count - days).ToList();
+			while (aggregates[0].Date > startDate)
+			{
+				aggregates.Insert(0, new Models.Aggregate() { Date = aggregates[0].Date.AddDays(-1), Count = 0 });
+			}
+
+			while (aggregates[aggregates.Count - 1].Date < endDate)
+			{
+				aggregates.Insert(aggregates.Count, new Models.Aggregate() { Date = aggregates[aggregates.Count - 1].Date.AddDays(1), Count = 0 });
+			}
+
+			//aggregates = aggregates.Skip(aggregates.Count - days).ToList();
 			return aggregates;
 		}
 	
