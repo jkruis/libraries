@@ -10,9 +10,13 @@ using System.Web.Mvc;
 
 namespace KruisIT.Web.Analytics.Controllers
 {
+	// todo : add screenshot to docs. change kruisit.nl/packages to one package per line, small screenshot on the left. remove line around page title.
+
 	// todo : adds RazorGeneratorMvcStart to projects when the package is installed. shouldn't!
 
 	// todo : combine with known users/ip-addresses, if possible.
+
+	// todo : show referrer, user agent info. allow filtering.
 
 	public class ReportController : Controller
 	{
@@ -99,15 +103,10 @@ namespace KruisIT.Web.Analytics.Controllers
 
 		public ActionResult Aggregates(Models.Filter filter)
 		{
-			var aggregates = db.GetVisitsByDay(filter.Website, filter.Location, filter.Visitor);
+			if (0 == filter.Days) filter.Days = 35;
 
-			for (int i = 1; i < aggregates.Count; i++)
-			{
-				if (aggregates[i].Date - aggregates[i - 1].Date > new TimeSpan(1, 0, 0, 0))
-				{
-					aggregates.Insert(i, new Models.Aggregate() { Date = aggregates[i - 1].Date.AddDays(1), Count = 0 });
-				}
-			}
+			var aggregates = db.GetVisitsByDay(filter.Days, filter.Website, filter.Location, filter.Visitor);
+
 			Models.CurrentList<Models.Aggregate> model = new Models.CurrentList<Models.Aggregate>() { Filter = filter, Data = aggregates };
 
 			return FindView("Aggregates", model);
