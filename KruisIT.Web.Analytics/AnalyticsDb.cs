@@ -56,7 +56,7 @@ namespace KruisIT.Web.Analytics
 				aggregates.Insert(0, new Models.Aggregate() { Date = aggregates[0].Date.AddDays(-1), Count = 0 });
 			}
 
-			while (aggregates[aggregates.Count - 1].Date < endDate)
+			while (aggregates[aggregates.Count - 1].Date < endDate.Date)
 			{
 				aggregates.Insert(aggregates.Count, new Models.Aggregate() { Date = aggregates[aggregates.Count - 1].Date.AddDays(1), Count = 0 });
 			}
