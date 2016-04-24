@@ -3,6 +3,7 @@
 	Layout = null;
 
 	int maxCount = Model.Data.Any() ? Model.Data.Max(m => m.Count) : 0;
+	int dayCount = Model.Data.Count;
 }
 
 <div class="analytics-aggregates analytics-aggregates-rotated">
@@ -12,24 +13,22 @@
 		<thead>
 			<tr>
 				<th>@Html.DisplayNameFor(model => model.Data.FirstOrDefault().Date)</th>
-				@if (null == Model.Data.FirstOrDefault() || null != Model.Data.FirstOrDefault().Location)
-				{
-					<th>@Html.DisplayNameFor(model => model.Data.FirstOrDefault().Location)</th>
-				}
 				<th>@Html.DisplayNameFor(model => model.Data.FirstOrDefault().Count)</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var agg in Model.Data)
+			@for (int dayIndex = 0; dayIndex < Model.Data.Count; dayIndex++)
 			{
+				var agg = Model.Data[dayIndex];
 				var width = 100 * agg.Count / maxCount;
 				<tr>
-					<td class="analytics-date">@agg.Date.ToString("yyyy-MM-dd")</td>
-					@if (null != Model.Data.FirstOrDefault().Location)
-					{
-						<td>@agg.Location</td>
-					}
-					<td class="analytics-count"><div style="width: @(width)%"><span>@agg.Count</span></div></td>
+					<td class="analytics-date">
+						@if (0 == dayIndex || (dayIndex == (dayCount / 4)) || (dayIndex == (dayCount / 2)) || (dayIndex == (dayCount * 3 / 4)) || dayCount - 1 == dayIndex)
+						{ 
+							<text>@agg.Date.ToString("yyyy-MM-dd")</text>
+						}
+					</td>
+					<td class="analytics-count"><div style="width: @(width)%" title="@agg.Date.ToString("yyyy-MM-dd") : @agg.Count"><span>@agg.Count</span></div></td>
 				</tr>
 			}
 		</tbody>

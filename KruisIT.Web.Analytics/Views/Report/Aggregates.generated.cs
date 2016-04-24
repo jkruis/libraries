@@ -42,6 +42,7 @@ namespace ASP
 	Layout = null;
 
 	int maxCount = Model.Data.Any() ? Model.Data.Max(m => m.Count) : 0;
+	int dayCount = Model.Data.Count;
 
             
             #line default
@@ -53,50 +54,16 @@ WriteLiteral(" class=\"analytics-aggregates analytics-aggregates-rotated\"");
 WriteLiteral(">\r\n\t<h4>Aggregates</h4>\r\n\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>");
 
             
-            #line 14 "..\..\Views\Report\Aggregates.cshtml"
+            #line 15 "..\..\Views\Report\Aggregates.cshtml"
                Write(Html.DisplayNameFor(model => model.Data.FirstOrDefault().Date));
 
             
             #line default
             #line hidden
-WriteLiteral("</th>\r\n");
+WriteLiteral("</th>\r\n\t\t\t\t<th>");
 
             
-            #line 15 "..\..\Views\Report\Aggregates.cshtml"
-				
-            
-            #line default
-            #line hidden
-            
-            #line 15 "..\..\Views\Report\Aggregates.cshtml"
-                 if (null == Model.Data.FirstOrDefault() || null != Model.Data.FirstOrDefault().Location)
-				{
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\t\t\t\t\t<th>");
-
-            
-            #line 17 "..\..\Views\Report\Aggregates.cshtml"
-                   Write(Html.DisplayNameFor(model => model.Data.FirstOrDefault().Location));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</th>\r\n");
-
-            
-            #line 18 "..\..\Views\Report\Aggregates.cshtml"
-				}
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\t\t\t\t<th>");
-
-            
-            #line 19 "..\..\Views\Report\Aggregates.cshtml"
+            #line 16 "..\..\Views\Report\Aggregates.cshtml"
                Write(Html.DisplayNameFor(model => model.Data.FirstOrDefault().Count));
 
             
@@ -105,15 +72,16 @@ WriteLiteral("\t\t\t\t<th>");
 WriteLiteral("</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n");
 
             
-            #line 23 "..\..\Views\Report\Aggregates.cshtml"
+            #line 20 "..\..\Views\Report\Aggregates.cshtml"
 			
             
             #line default
             #line hidden
             
-            #line 23 "..\..\Views\Report\Aggregates.cshtml"
-             foreach (var agg in Model.Data)
+            #line 20 "..\..\Views\Report\Aggregates.cshtml"
+             for (int dayIndex = 0; dayIndex < Model.Data.Count; dayIndex++)
 			{
+				var agg = Model.Data[dayIndex];
 				var width = 100 * agg.Count / maxCount;
 
             
@@ -123,72 +91,81 @@ WriteLiteral("\t\t\t\t<tr>\r\n\t\t\t\t\t<td");
 
 WriteLiteral(" class=\"analytics-date\"");
 
-WriteLiteral(">");
+WriteLiteral(">\r\n");
 
             
-            #line 27 "..\..\Views\Report\Aggregates.cshtml"
-                                          Write(agg.Date.ToString("yyyy-MM-dd"));
+            #line 26 "..\..\Views\Report\Aggregates.cshtml"
+						
+            
+            #line default
+            #line hidden
+            
+            #line 26 "..\..\Views\Report\Aggregates.cshtml"
+                         if (0 == dayIndex || (dayIndex == (dayCount / 4)) || (dayIndex == (dayCount / 2)) || (dayIndex == (dayCount * 3 / 4)) || dayCount - 1 == dayIndex)
+						{ 
 
             
             #line default
             #line hidden
-WriteLiteral("</td>\r\n");
+WriteLiteral("\t\t\t\t\t\t\t");
 
             
             #line 28 "..\..\Views\Report\Aggregates.cshtml"
-					
-            
-            #line default
-            #line hidden
-            
-            #line 28 "..\..\Views\Report\Aggregates.cshtml"
-                     if (null != Model.Data.FirstOrDefault().Location)
-					{
+                             Write(agg.Date.ToString("yyyy-MM-dd"));
 
             
             #line default
             #line hidden
-WriteLiteral("\t\t\t\t\t\t<td>");
+WriteLiteral("\r\n");
 
             
-            #line 30 "..\..\Views\Report\Aggregates.cshtml"
-                       Write(agg.Location);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</td>\r\n");
-
-            
-            #line 31 "..\..\Views\Report\Aggregates.cshtml"
-					}
+            #line 29 "..\..\Views\Report\Aggregates.cshtml"
+						}
 
             
             #line default
             #line hidden
-WriteLiteral("\t\t\t\t\t<td");
+WriteLiteral("\t\t\t\t\t</td>\r\n\t\t\t\t\t<td");
 
 WriteLiteral(" class=\"analytics-count\"");
 
 WriteLiteral("><div");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 997), Tuple.Create("\"", 1021)
-, Tuple.Create(Tuple.Create("", 1005), Tuple.Create("width:", 1005), true)
+WriteAttribute("style", Tuple.Create(" style=\"", 1009), Tuple.Create("\"", 1033)
+, Tuple.Create(Tuple.Create("", 1017), Tuple.Create("width:", 1017), true)
             
-            #line 32 "..\..\Views\Report\Aggregates.cshtml"
-, Tuple.Create(Tuple.Create(" ", 1011), Tuple.Create<System.Object, System.Int32>(width
+            #line 31 "..\..\Views\Report\Aggregates.cshtml"
+, Tuple.Create(Tuple.Create(" ", 1023), Tuple.Create<System.Object, System.Int32>(width
             
             #line default
             #line hidden
-, 1012), false)
-, Tuple.Create(Tuple.Create("", 1020), Tuple.Create("%", 1020), true)
+, 1024), false)
+, Tuple.Create(Tuple.Create("", 1032), Tuple.Create("%", 1032), true)
+);
+
+WriteAttribute("title", Tuple.Create(" title=\"", 1034), Tuple.Create("\"", 1087)
+            
+            #line 31 "..\..\Views\Report\Aggregates.cshtml"
+     , Tuple.Create(Tuple.Create("", 1042), Tuple.Create<System.Object, System.Int32>(agg.Date.ToString("yyyy-MM-dd")
+            
+            #line default
+            #line hidden
+, 1042), false)
+, Tuple.Create(Tuple.Create(" ", 1074), Tuple.Create(":", 1075), true)
+            
+            #line 31 "..\..\Views\Report\Aggregates.cshtml"
+                                       , Tuple.Create(Tuple.Create(" ", 1076), Tuple.Create<System.Object, System.Int32>(agg.Count
+            
+            #line default
+            #line hidden
+, 1077), false)
 );
 
 WriteLiteral("><span>");
 
             
-            #line 32 "..\..\Views\Report\Aggregates.cshtml"
-                                                                               Write(agg.Count);
+            #line 31 "..\..\Views\Report\Aggregates.cshtml"
+                                                                                                                                     Write(agg.Count);
 
             
             #line default
@@ -196,7 +173,7 @@ WriteLiteral("><span>");
 WriteLiteral("</span></div></td>\r\n\t\t\t\t</tr>\r\n");
 
             
-            #line 34 "..\..\Views\Report\Aggregates.cshtml"
+            #line 33 "..\..\Views\Report\Aggregates.cshtml"
 			}
 
             
