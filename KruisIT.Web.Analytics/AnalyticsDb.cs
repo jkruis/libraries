@@ -51,14 +51,24 @@ namespace KruisIT.Web.Analytics
 				}
 			}
 
-			while (aggregates[0].Date > startDate)
+			if (aggregates.Any())
 			{
-				aggregates.Insert(0, new Models.Aggregate() { Date = aggregates[0].Date.AddDays(-1), Count = 0 });
-			}
+				while (aggregates[0].Date > startDate)
+				{
+					aggregates.Insert(0, new Models.Aggregate() { Date = aggregates[0].Date.AddDays(-1), Count = 0 });
+				}
 
-			while (aggregates[aggregates.Count - 1].Date < endDate.Date)
+				while (aggregates[aggregates.Count - 1].Date < endDate.Date)
+				{
+					aggregates.Insert(aggregates.Count, new Models.Aggregate() { Date = aggregates[aggregates.Count - 1].Date.AddDays(1), Count = 0 });
+				}
+			}
+			else
 			{
-				aggregates.Insert(aggregates.Count, new Models.Aggregate() { Date = aggregates[aggregates.Count - 1].Date.AddDays(1), Count = 0 });
+				for (DateTime date = startDate; date <= endDate; date = date.AddDays(1))
+				{
+					aggregates.Insert(aggregates.Count, new Models.Aggregate() { Date = date, Count = 0 });
+				}
 			}
 
 			//aggregates = aggregates.Skip(aggregates.Count - days).ToList();
