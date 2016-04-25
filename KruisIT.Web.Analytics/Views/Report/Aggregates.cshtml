@@ -32,7 +32,7 @@
 							<div class="analytics-date-secondary">@agg.Date.ToString("yyyy-MM-dd")</div>
 						}
 					</td>
-					<td class="analytics-count"><div style="width: @(width)%" title="@agg.Date.ToString("yyyy-MM-dd") : @agg.Count"><span>@agg.Count</span></div></td>
+					<td class="analytics-count @(agg.Count == 0 ? "analytics-count-empty" : "")"><div style="width: @(width)%" title="@agg.Date.ToString("yyyy-MM-dd") : @agg.Count"><span>@agg.Count</span></div></td>
 				</tr>
 			}
 		</tbody>
