@@ -18,26 +18,26 @@ namespace KruisIT.Web.Analytics
 
 		public DbSet<Models.Visit> Analytics_Visits { get; set; }
 
-		public List<Models.Aggregate> GetVisitsByDay(DateTime startDate, DateTime endDate, string website, string location, string visitor)
+		public List<Models.Aggregate> GetVisitsByDay(Models.Filter filter)
 		{
 			string sql = "select cast(StartTime as date) as [Date], count(*) as [Count], null as Location from Analytics_Visits";
-			if (!String.IsNullOrEmpty(website))
+			if (!String.IsNullOrEmpty(filter.Website))
 			{
-				sql += String.Format(" where Website = '{0}'", website);
+				sql += String.Format(" where Website = '{0}'", filter.Website);
 			}
 			else
 			{
 				sql += " where Website is null";
 			}
 
-			sql += String.Format(" and StartTime > '{0}' and StartTime < '{1}'", startDate.ToString("yyyy-MM-dd"), endDate.ToString("yyyy-MM-dd") + " 23:59:59");
+			sql += String.Format(" and StartTime > '{0}' and StartTime < '{1}'", filter.StartDate.Value.ToString("yyyy-MM-dd"), filter.EndDate.Value.ToString("yyyy-MM-dd") + " 23:59:59");
 
-			if (!String.IsNullOrEmpty(location)) {
-				sql += String.Format(" and Location = '{0}'", location);
+			if (!String.IsNullOrEmpty(filter.Location)) {
+				sql += String.Format(" and Location = '{0}'", filter.Location);
 			}
 
-			if (!String.IsNullOrEmpty(visitor)) {
-				sql += String.Format(" and IpAddress = '{0}'", visitor);
+			if (!String.IsNullOrEmpty(filter.Visitor)) {
+				sql += String.Format(" and IpAddress = '{0}'", filter.Visitor);
 			}
 
 			sql += " group by cast(StartTime as date)";
@@ -53,25 +53,24 @@ namespace KruisIT.Web.Analytics
 
 			if (aggregates.Any())
 			{
-				while (aggregates[0].Date > startDate)
+				while (aggregates[0].Date > filter.StartDate)
 				{
 					aggregates.Insert(0, new Models.Aggregate() { Date = aggregates[0].Date.AddDays(-1), Count = 0 });
 				}
 
-				while (aggregates[aggregates.Count - 1].Date < endDate.Date)
+				while (aggregates[aggregates.Count - 1].Date < filter.EndDate.Value.Date)
 				{
 					aggregates.Insert(aggregates.Count, new Models.Aggregate() { Date = aggregates[aggregates.Count - 1].Date.AddDays(1), Count = 0 });
 				}
 			}
 			else
 			{
-				for (DateTime date = startDate; date <= endDate; date = date.AddDays(1))
+				for (DateTime date = filter.StartDate.Value; date <= filter.EndDate; date = date.AddDays(1))
 				{
 					aggregates.Insert(aggregates.Count, new Models.Aggregate() { Date = date, Count = 0 });
 				}
 			}
 
-			//aggregates = aggregates.Skip(aggregates.Count - days).ToList();
 			return aggregates;
 		}
 	
