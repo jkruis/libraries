@@ -7,7 +7,7 @@
 }
 
 <div class="analytics-aggregates analytics-aggregates-rotated">
-	<h4>Aggregates</h4>
+	<h4>Aggregates @dayCount</h4>
 
 	<table>
 		<thead>
@@ -20,12 +20,16 @@
 			@for (int dayIndex = 0; dayIndex < Model.Data.Count; dayIndex++)
 			{
 				var agg = Model.Data[dayIndex];
-				var width = 100 * agg.Count / maxCount;
+				var width = (0 == maxCount) ? 0 : (100 * agg.Count / maxCount);
 				<tr>
 					<td class="analytics-date">
 						@if (0 == dayIndex || (dayIndex == (dayCount / 4)) || (dayIndex == (dayCount / 2)) || (dayIndex == (dayCount * 3 / 4)) || dayCount - 1 == dayIndex)
 						{ 
-							<text>@agg.Date.ToString("yyyy-MM-dd")</text>
+							<div>@agg.Date.ToString("yyyy-MM-dd")</div>
+						}
+						else
+						{
+							<div class="analytics-date-secondary">@agg.Date.ToString("yyyy-MM-dd")</div>
 						}
 					</td>
 					<td class="analytics-count"><div style="width: @(width)%" title="@agg.Date.ToString("yyyy-MM-dd") : @agg.Count"><span>@agg.Count</span></div></td>
