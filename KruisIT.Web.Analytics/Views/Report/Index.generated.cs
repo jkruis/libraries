@@ -74,16 +74,34 @@ WriteLiteral("\t\t");
             
             #line default
             #line hidden
-WriteLiteral("\r\n\t\t<small>\r\n");
+WriteLiteral("\r\n\t\t<small>\r\n\t\t\tDate: ");
 
             
             #line 12 "..\..\Views\Report\Index.cshtml"
+             Write(Model.Filter.StartDate.Value.ToString("yyyy-MM-dd"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" - ");
+
+            
+            #line 12 "..\..\Views\Report\Index.cshtml"
+                                                                    Write(Model.Filter.EndDate.Value.ToString("yyyy-MM-dd"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+            
+            #line 13 "..\..\Views\Report\Index.cshtml"
 			
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Report\Index.cshtml"
+            #line 13 "..\..\Views\Report\Index.cshtml"
              if (!String.IsNullOrEmpty(Model.Filter.Website)) {
             
             #line default
@@ -93,7 +111,7 @@ WriteLiteral(" ");
 WriteLiteral("Website: ");
 
             
-            #line 12 "..\..\Views\Report\Index.cshtml"
+            #line 13 "..\..\Views\Report\Index.cshtml"
                                                                           Write(Model.Filter.Website);
 
             
@@ -104,7 +122,7 @@ WriteLiteral(" ,");
 WriteLiteral(" ");
 
             
-            #line 12 "..\..\Views\Report\Index.cshtml"
+            #line 13 "..\..\Views\Report\Index.cshtml"
                                                                                                               }
 
             
@@ -113,7 +131,7 @@ WriteLiteral(" ");
 WriteLiteral("\t\t\t");
 
             
-            #line 13 "..\..\Views\Report\Index.cshtml"
+            #line 14 "..\..\Views\Report\Index.cshtml"
              if (!String.IsNullOrEmpty(Model.Filter.Location)) {
             
             #line default
@@ -123,7 +141,7 @@ WriteLiteral(" ");
 WriteLiteral("Location: ");
 
             
-            #line 13 "..\..\Views\Report\Index.cshtml"
+            #line 14 "..\..\Views\Report\Index.cshtml"
                                                                             Write(Model.Filter.Location);
 
             
@@ -134,7 +152,7 @@ WriteLiteral(" ,");
 WriteLiteral(" ");
 
             
-            #line 13 "..\..\Views\Report\Index.cshtml"
+            #line 14 "..\..\Views\Report\Index.cshtml"
                                                                                                                  }
 
             
@@ -143,7 +161,7 @@ WriteLiteral(" ");
 WriteLiteral("\t\t\t");
 
             
-            #line 14 "..\..\Views\Report\Index.cshtml"
+            #line 15 "..\..\Views\Report\Index.cshtml"
              if (!String.IsNullOrEmpty(Model.Filter.Visitor)) {
             
             #line default
@@ -153,7 +171,7 @@ WriteLiteral(" ");
 WriteLiteral("Visitor: ");
 
             
-            #line 14 "..\..\Views\Report\Index.cshtml"
+            #line 15 "..\..\Views\Report\Index.cshtml"
                                                                           Write(Model.Filter.Visitor);
 
             
@@ -162,7 +180,7 @@ WriteLiteral("Visitor: ");
 WriteLiteral(" ");
 
             
-            #line 14 "..\..\Views\Report\Index.cshtml"
+            #line 15 "..\..\Views\Report\Index.cshtml"
                                                                                                             }
 
             
@@ -171,13 +189,13 @@ WriteLiteral(" ");
 WriteLiteral("\t\t</small>\r\n\t</h2>\r\n\r\n");
 
             
-            #line 18 "..\..\Views\Report\Index.cshtml"
+            #line 19 "..\..\Views\Report\Index.cshtml"
 	
             
             #line default
             #line hidden
             
-            #line 18 "..\..\Views\Report\Index.cshtml"
+            #line 19 "..\..\Views\Report\Index.cshtml"
      foreach (var site in Model.Data)
 	{
 		
@@ -185,14 +203,14 @@ WriteLiteral("\t\t</small>\r\n\t</h2>\r\n\r\n");
             #line default
             #line hidden
             
-            #line 20 "..\..\Views\Report\Index.cshtml"
+            #line 21 "..\..\Views\Report\Index.cshtml"
    Write(Html.Action("Website", new { website = site, location = Model.Filter.Location, visitor = Model.Filter.Visitor }));
 
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Views\Report\Index.cshtml"
+            #line 21 "..\..\Views\Report\Index.cshtml"
                                                                                                                          
 	}
 
