@@ -72,8 +72,16 @@ namespace KruisIT.Web.Analytics.Controllers
 
 		IQueryable<Models.Visit> FilteredVisits(Models.Filter filter)
 		{
-			// todo : filter on filter.Days
-			var visits = db.Analytics_Visits.Where(v => v.Website == filter.Website && (filter.Location == null || filter.Location == v.Location) && (filter.Visitor == null || filter.Visitor == v.IpAddress));
+			DateTime startD = filter.StartDate.Value;
+			DateTime endD = filter.EndDate.Value.Date.AddDays(1);
+
+			var visits = db.Analytics_Visits.Where(v =>
+				v.StartTime > startD
+				&& v.StartTime < endD
+				&& v.Website == filter.Website 
+				&& (filter.Location == null || filter.Location == v.Location) 
+				&& (filter.Visitor == null || filter.Visitor == v.IpAddress)
+				);
 			return visits;
 		}
 
