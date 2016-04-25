@@ -108,17 +108,15 @@ WriteLiteral("\r\n");
             #line hidden
 WriteLiteral(" ");
 
-WriteLiteral("Website: ");
+WriteLiteral(", Website: ");
 
             
             #line 13 "..\..\Views\Report\Index.cshtml"
-                                                                          Write(Model.Filter.Website);
+                                                                            Write(Model.Filter.Website);
 
             
             #line default
             #line hidden
-WriteLiteral(" ,");
-
 WriteLiteral(" ");
 
             
@@ -138,17 +136,15 @@ WriteLiteral("\t\t\t");
             #line hidden
 WriteLiteral(" ");
 
-WriteLiteral("Location: ");
+WriteLiteral(", Location: ");
 
             
             #line 14 "..\..\Views\Report\Index.cshtml"
-                                                                            Write(Model.Filter.Location);
+                                                                              Write(Model.Filter.Location);
 
             
             #line default
             #line hidden
-WriteLiteral(" ,");
-
 WriteLiteral(" ");
 
             
@@ -168,11 +164,11 @@ WriteLiteral("\t\t\t");
             #line hidden
 WriteLiteral(" ");
 
-WriteLiteral("Visitor: ");
+WriteLiteral(", Visitor: ");
 
             
             #line 15 "..\..\Views\Report\Index.cshtml"
-                                                                          Write(Model.Filter.Visitor);
+                                                                            Write(Model.Filter.Visitor);
 
             
             #line default
@@ -181,7 +177,7 @@ WriteLiteral(" ");
 
             
             #line 15 "..\..\Views\Report\Index.cshtml"
-                                                                                                            }
+                                                                                                              }
 
             
             #line default
