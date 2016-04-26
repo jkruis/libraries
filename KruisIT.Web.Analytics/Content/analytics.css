@@ -1,8 +1,10 @@
 ﻿
 .analytics-aggregates .analytics-count { width: 300px; }
-	.analytics-aggregates .analytics-count div { background-color: #cce; }
-		.analytics-aggregates .analytics-count span { padding-left: 4px; }
+	.analytics-aggregates .analytics-count div { background-color: #cce; border-bottom: 1px solid #fff }
+
+		.analytics-aggregates .analytics-count span { padding-left: 4px; visibility: hidden; }
 	.analytics-aggregates .analytics-date { padding-right: 1em; }
+		.analytics-aggregates .analytics-date .analytics-date-secondary { visibility: hidden; }
 
 .analytics-aggregates { border: 1px solid #eee; padding: 20px; }
 	.analytics-aggregates h4 { display: none; }
@@ -10,7 +12,9 @@
 .analytics-aggregates-rotated { height: 430px; }
 	.analytics-aggregates-rotated table { margin-top: 150px; margin-bottom: 150px; transform-origin: 0 0; transform: rotate(-90deg) translate(-250px, 0); }
 		.analytics-aggregates-rotated table thead { display: none; }
-
+		/*.analytics-aggregates-rotated table tr { line-height: 12px; }*/
+		.analytics-aggregates-rotated table td { padding-top: 0; padding-bottom: 0; }
+		.analytics-aggregates-rotated table td div { height: 12px; }
 
 .analytics-locations li { }
 

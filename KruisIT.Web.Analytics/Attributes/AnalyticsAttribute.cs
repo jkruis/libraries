@@ -71,7 +71,7 @@ namespace KruisIT.Web.Analytics.Attributes
 
 		void LogError(Exception ex)
 		{
-			// todo : log analytics error somewhere
+			// feature-todo : log analytics error somewhere
 
 		}
 	

@@ -14,9 +14,9 @@ namespace KruisIT.Web.Analytics.Controllers
 
 	// todo : adds RazorGeneratorMvcStart to projects when the package is installed. shouldn't!
 
-	// todo : combine with known users/ip-addresses, if possible.
+	// feature-todo : combine with known users/ip-addresses, if possible.
 
-	// todo : show referrer, user agent info. allow filtering.
+	// feature-todo : show referrer, user agent info. allow filtering.
 
 	public class ReportController : Controller
 	{
@@ -132,7 +132,7 @@ namespace KruisIT.Web.Analytics.Controllers
 			return FindView("Locations", model);
 		}
 
-		// todo : add UI for selecting period
+		// todo : add UI for selecting period when Website is selected
 		public ActionResult Aggregates(Models.Filter filter)
 		{
 			filter = SetFilterDefaults(filter);
