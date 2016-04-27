@@ -102,9 +102,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnalyticsDb.cs" />
+    <Compile Include="App_Start\DatabaseStart.cs" />
+    <Compile Include="Database\AnalyticsDb.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="Attributes\AnalyticsAttribute.cs" />
+    <Compile Include="Database\MigrationsContextFactory.cs" />
     <Compile Include="Migrations\201604081120547_InitialCreate.cs" />
     <Compile Include="Migrations\201604081120547_InitialCreate.Designer.cs">
       <DependentUpon>201604081120547_InitialCreate.cs</DependentUpon>

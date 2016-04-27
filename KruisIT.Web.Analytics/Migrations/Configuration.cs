@@ -5,14 +5,14 @@ namespace KruisIT.Web.Analytics.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<KruisIT.Web.Analytics.AnalyticsDb>
+    internal sealed class Configuration : DbMigrationsConfiguration<KruisIT.Web.Analytics.Database.AnalyticsDb>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(KruisIT.Web.Analytics.AnalyticsDb context)
+        protected override void Seed(KruisIT.Web.Analytics.Database.AnalyticsDb context)
         {
             //  This method will be called after migrating to the latest version.
 

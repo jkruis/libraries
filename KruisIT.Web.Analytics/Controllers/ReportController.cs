@@ -20,7 +20,7 @@ namespace KruisIT.Web.Analytics.Controllers
 
 	public class ReportController : Controller
 	{
-		AnalyticsDb db;
+		Database.AnalyticsDb db;
 		string NameOrConnectionString = null;
 		string SiteName = null;
 
@@ -28,10 +28,12 @@ namespace KruisIT.Web.Analytics.Controllers
 
 		public ReportController(string nameOrConnectionString, string siteName)
 		{
+			Database.ConnectionHolder.NameOrConnectionString = nameOrConnectionString;
+
 			NameOrConnectionString = nameOrConnectionString;
 			SiteName = siteName;
 
-			db = new AnalyticsDb(NameOrConnectionString);
+			db = new Database.AnalyticsDb(NameOrConnectionString);
 		}
 
 		protected override void OnActionExecuting(ActionExecutingContext filterContext)

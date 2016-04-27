@@ -6,6 +6,7 @@ using RazorGenerator.Mvc;
 [assembly: WebActivatorEx.PostApplicationStartMethod(typeof(KruisIT.Web.Analytics.RazorGeneratorMvcStart), "Start")]
 
 namespace KruisIT.Web.Analytics {
+
     public static class RazorGeneratorMvcStart {
         public static void Start() {
             var engine = new PrecompiledMvcEngine(typeof(RazorGeneratorMvcStart).Assembly) {
@@ -16,6 +17,7 @@ namespace KruisIT.Web.Analytics {
 
             // StartPage lookups are done by WebPages. 
             VirtualPathFactoryManager.RegisterVirtualPathFactory(engine);
-        }
+		}
     }
+
 }

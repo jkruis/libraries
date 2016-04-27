@@ -9,7 +9,7 @@ namespace KruisIT.Web.Analytics.Attributes
 {
 	public class AnalyticsAttribute : ActionFilterAttribute
 	{
-		AnalyticsDb db;
+		Database.AnalyticsDb db;
 		string NameOrConnectionString = null;
 		string Website = null;
 		int? VisitId = null;
@@ -18,6 +18,8 @@ namespace KruisIT.Web.Analytics.Attributes
 
 		public AnalyticsAttribute(string nameOrConnectionString, string siteName)
 		{
+			Database.ConnectionHolder.NameOrConnectionString = nameOrConnectionString;
+
 			NameOrConnectionString = nameOrConnectionString;
 			Website = siteName;
 		}
@@ -38,7 +40,7 @@ namespace KruisIT.Web.Analytics.Attributes
 					Referrer = (null != filterContext.HttpContext.Request.UrlReferrer) ? filterContext.HttpContext.Request.UrlReferrer.AbsoluteUri : null
 				};
 
-				db = new AnalyticsDb(NameOrConnectionString);
+				db = new Database.AnalyticsDb(NameOrConnectionString);
 				db.Analytics_Visits.Add(visit);
 				db.SaveChanges();
 
