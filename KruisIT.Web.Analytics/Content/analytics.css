@@ -6,6 +6,8 @@
 	.analytics-aggregates .analytics-date { padding-right: 1em; }
 		.analytics-aggregates .analytics-date .analytics-date-secondary { visibility: hidden; }
 
+		.analytics-aggregates .analytics-aggregates-y-label { display: none; }
+
 .analytics-aggregates { border: 1px solid #eee; padding: 20px; }
 	.analytics-aggregates h4 { display: none; }
 
@@ -15,6 +17,8 @@
 		/*.analytics-aggregates-rotated table tr { line-height: 12px; }*/
 		.analytics-aggregates-rotated table td { padding-top: 0; padding-bottom: 0; }
 		.analytics-aggregates-rotated table td div { height: 12px; }
+
+	.analytics-aggregates.analytics-aggregates-rotated .analytics-aggregates-y-label { display: block; float: left; font-size: small; margin-left: -32px; }
 
 .analytics-locations li { }
 

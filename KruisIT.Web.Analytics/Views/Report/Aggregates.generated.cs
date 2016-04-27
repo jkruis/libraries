@@ -60,10 +60,23 @@ WriteLiteral(">\r\n\t<h4>Aggregates ");
             
             #line default
             #line hidden
-WriteLiteral("</h4>\r\n\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>");
+WriteLiteral("</h4>\r\n\r\n\t<span");
+
+WriteLiteral(" class=\"analytics-aggregates-y-label\"");
+
+WriteLiteral(">");
 
             
-            #line 15 "..\..\Views\Report\Aggregates.cshtml"
+            #line 12 "..\..\Views\Report\Aggregates.cshtml"
+                                          Write(maxCount);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>");
+
+            
+            #line 17 "..\..\Views\Report\Aggregates.cshtml"
                Write(Html.DisplayNameFor(model => model.Data.FirstOrDefault().Date));
 
             
@@ -72,7 +85,7 @@ WriteLiteral("</h4>\r\n\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th
 WriteLiteral("</th>\r\n\t\t\t\t<th>");
 
             
-            #line 16 "..\..\Views\Report\Aggregates.cshtml"
+            #line 18 "..\..\Views\Report\Aggregates.cshtml"
                Write(Html.DisplayNameFor(model => model.Data.FirstOrDefault().Count));
 
             
@@ -81,13 +94,13 @@ WriteLiteral("</th>\r\n\t\t\t\t<th>");
 WriteLiteral("</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n");
 
             
-            #line 20 "..\..\Views\Report\Aggregates.cshtml"
+            #line 22 "..\..\Views\Report\Aggregates.cshtml"
 			
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Views\Report\Aggregates.cshtml"
+            #line 22 "..\..\Views\Report\Aggregates.cshtml"
              for (int dayIndex = 0; dayIndex < Model.Data.Count; dayIndex++)
 			{
 				var agg = Model.Data[dayIndex];
@@ -103,13 +116,13 @@ WriteLiteral(" class=\"analytics-date\"");
 WriteLiteral(">\r\n");
 
             
-            #line 26 "..\..\Views\Report\Aggregates.cshtml"
+            #line 28 "..\..\Views\Report\Aggregates.cshtml"
 						
             
             #line default
             #line hidden
             
-            #line 26 "..\..\Views\Report\Aggregates.cshtml"
+            #line 28 "..\..\Views\Report\Aggregates.cshtml"
                          if (0 == dayIndex || (dayIndex == (dayCount / 4)) || (dayIndex == (dayCount / 2)) || (dayIndex == (dayCount * 3 / 4)) || dayCount - 1 == dayIndex)
 						{ 
 
@@ -119,7 +132,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("\t\t\t\t\t\t\t<div>");
 
             
-            #line 28 "..\..\Views\Report\Aggregates.cshtml"
+            #line 30 "..\..\Views\Report\Aggregates.cshtml"
                             Write(agg.Date.ToString("yyyy-MM-dd"));
 
             
@@ -128,7 +141,7 @@ WriteLiteral("\t\t\t\t\t\t\t<div>");
 WriteLiteral("</div>\r\n");
 
             
-            #line 29 "..\..\Views\Report\Aggregates.cshtml"
+            #line 31 "..\..\Views\Report\Aggregates.cshtml"
 						}
 						else
 						{
@@ -143,7 +156,7 @@ WriteLiteral(" class=\"analytics-date-secondary\"");
 WriteLiteral(">");
 
             
-            #line 32 "..\..\Views\Report\Aggregates.cshtml"
+            #line 34 "..\..\Views\Report\Aggregates.cshtml"
                                                              Write(agg.Date.ToString("yyyy-MM-dd"));
 
             
@@ -152,7 +165,7 @@ WriteLiteral(">");
 WriteLiteral("</div>\r\n");
 
             
-            #line 33 "..\..\Views\Report\Aggregates.cshtml"
+            #line 35 "..\..\Views\Report\Aggregates.cshtml"
 						}
 
             
@@ -160,53 +173,53 @@ WriteLiteral("</div>\r\n");
             #line hidden
 WriteLiteral("\t\t\t\t\t</td>\r\n\t\t\t\t\t<td");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1127), Tuple.Create("\"", 1199)
-, Tuple.Create(Tuple.Create("", 1135), Tuple.Create("analytics-count", 1135), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1191), Tuple.Create("\"", 1263)
+, Tuple.Create(Tuple.Create("", 1199), Tuple.Create("analytics-count", 1199), true)
             
-            #line 35 "..\..\Views\Report\Aggregates.cshtml"
-, Tuple.Create(Tuple.Create(" ", 1150), Tuple.Create<System.Object, System.Int32>(agg.Count == 0 ? "analytics-count-empty" : ""
+            #line 37 "..\..\Views\Report\Aggregates.cshtml"
+, Tuple.Create(Tuple.Create(" ", 1214), Tuple.Create<System.Object, System.Int32>(agg.Count == 0 ? "analytics-count-empty" : ""
             
             #line default
             #line hidden
-, 1151), false)
+, 1215), false)
 );
 
 WriteLiteral("><div");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 1205), Tuple.Create("\"", 1229)
-, Tuple.Create(Tuple.Create("", 1213), Tuple.Create("width:", 1213), true)
+WriteAttribute("style", Tuple.Create(" style=\"", 1269), Tuple.Create("\"", 1293)
+, Tuple.Create(Tuple.Create("", 1277), Tuple.Create("width:", 1277), true)
             
-            #line 35 "..\..\Views\Report\Aggregates.cshtml"
-                                    , Tuple.Create(Tuple.Create(" ", 1219), Tuple.Create<System.Object, System.Int32>(width
+            #line 37 "..\..\Views\Report\Aggregates.cshtml"
+                                    , Tuple.Create(Tuple.Create(" ", 1283), Tuple.Create<System.Object, System.Int32>(width
             
             #line default
             #line hidden
-, 1220), false)
-, Tuple.Create(Tuple.Create("", 1228), Tuple.Create("%", 1228), true)
+, 1284), false)
+, Tuple.Create(Tuple.Create("", 1292), Tuple.Create("%", 1292), true)
 );
 
-WriteAttribute("title", Tuple.Create(" title=\"", 1230), Tuple.Create("\"", 1283)
+WriteAttribute("title", Tuple.Create(" title=\"", 1294), Tuple.Create("\"", 1347)
             
-            #line 35 "..\..\Views\Report\Aggregates.cshtml"
-                                                      , Tuple.Create(Tuple.Create("", 1238), Tuple.Create<System.Object, System.Int32>(agg.Date.ToString("yyyy-MM-dd")
-            
-            #line default
-            #line hidden
-, 1238), false)
-, Tuple.Create(Tuple.Create(" ", 1270), Tuple.Create(":", 1271), true)
-            
-            #line 35 "..\..\Views\Report\Aggregates.cshtml"
-                                                                                        , Tuple.Create(Tuple.Create(" ", 1272), Tuple.Create<System.Object, System.Int32>(agg.Count
+            #line 37 "..\..\Views\Report\Aggregates.cshtml"
+                                                      , Tuple.Create(Tuple.Create("", 1302), Tuple.Create<System.Object, System.Int32>(agg.Date.ToString("yyyy-MM-dd")
             
             #line default
             #line hidden
-, 1273), false)
+, 1302), false)
+, Tuple.Create(Tuple.Create(" ", 1334), Tuple.Create(":", 1335), true)
+            
+            #line 37 "..\..\Views\Report\Aggregates.cshtml"
+                                                                                        , Tuple.Create(Tuple.Create(" ", 1336), Tuple.Create<System.Object, System.Int32>(agg.Count
+            
+            #line default
+            #line hidden
+, 1337), false)
 );
 
 WriteLiteral("><span>");
 
             
-            #line 35 "..\..\Views\Report\Aggregates.cshtml"
+            #line 37 "..\..\Views\Report\Aggregates.cshtml"
                                                                                                                                                                                       Write(agg.Count);
 
             
@@ -215,7 +228,7 @@ WriteLiteral("><span>");
 WriteLiteral("</span></div></td>\r\n\t\t\t\t</tr>\r\n");
 
             
-            #line 37 "..\..\Views\Report\Aggregates.cshtml"
+            #line 39 "..\..\Views\Report\Aggregates.cshtml"
 			}
 
             
