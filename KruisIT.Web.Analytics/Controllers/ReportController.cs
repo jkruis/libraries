@@ -65,7 +65,7 @@ namespace KruisIT.Web.Analytics.Controllers
 			if (!String.IsNullOrEmpty(SiteName)) filter.Website = SiteName;
 
 			if (null == filter.EndDate) filter.EndDate = DateTime.Now;
-			if (null == filter.StartDate) filter.StartDate = filter.EndDate.Value.AddDays(-35);
+			if (null == filter.StartDate) filter.StartDate = filter.EndDate.Value.AddDays(-65);
 
 			return filter;
 		}
