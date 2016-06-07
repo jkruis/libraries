@@ -6,7 +6,9 @@
 	<div class="analytics-website">
 		<h3>Site: @Model.Data</h3>
 
-		@Html.Action("Aggregates", new { website = Model.Filter.Website, location = Model.Filter.Location, visitor = Model.Filter.Visitor })
+		@Html.Action("Aggregates_Visitors", new { website = Model.Filter.Website, location = Model.Filter.Location, visitor = Model.Filter.Visitor })
+
+		@Html.Action("Aggregates_Visits", new { website = Model.Filter.Website, location = Model.Filter.Location, visitor = Model.Filter.Visitor })
 
 		@Html.Action("Locations", new { website = Model.Filter.Website, location = Model.Filter.Location, visitor = Model.Filter.Visitor })
 

@@ -65,7 +65,7 @@ WriteLiteral("\t\t");
 
             
             #line 9 "..\..\Views\Report\Website.cshtml"
-   Write(Html.Action("Aggregates", new { website = Model.Filter.Website, location = Model.Filter.Location, visitor = Model.Filter.Visitor }));
+   Write(Html.Action("Aggregates_Visitors", new { website = Model.Filter.Website, location = Model.Filter.Location, visitor = Model.Filter.Visitor }));
 
             
             #line default
@@ -76,7 +76,7 @@ WriteLiteral("\t\t");
 
             
             #line 11 "..\..\Views\Report\Website.cshtml"
-   Write(Html.Action("Locations", new { website = Model.Filter.Website, location = Model.Filter.Location, visitor = Model.Filter.Visitor }));
+   Write(Html.Action("Aggregates_Visits", new { website = Model.Filter.Website, location = Model.Filter.Location, visitor = Model.Filter.Visitor }));
 
             
             #line default
@@ -87,6 +87,17 @@ WriteLiteral("\t\t");
 
             
             #line 13 "..\..\Views\Report\Website.cshtml"
+   Write(Html.Action("Locations", new { website = Model.Filter.Website, location = Model.Filter.Location, visitor = Model.Filter.Visitor }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n");
+
+WriteLiteral("\t\t");
+
+            
+            #line 15 "..\..\Views\Report\Website.cshtml"
    Write(Html.Action("Visitors", new { website = Model.Filter.Website, location = Model.Filter.Location, visitor = Model.Filter.Visitor }));
 
             

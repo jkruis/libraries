@@ -135,7 +135,24 @@ namespace KruisIT.Web.Analytics.Controllers
 		}
 
 		// todo : add UI for selecting period when Website is selected
-		public ActionResult Aggregates(Models.Filter filter)
+		// todo : create a line chart with http://www.chartjs.org/docs/#line-chart-example-usage
+
+		public ActionResult Aggregates_Visitors(Models.Filter filter)
+		{
+			filter = SetFilterDefaults(filter);
+
+			if (null == filter.EndDate) filter.EndDate = DateTime.Now;
+			if (null == filter.StartDate) filter.StartDate = filter.EndDate.Value.AddDays(-35);
+
+			var aggregates = db.GetVisitorsByDay(filter);
+
+			Models.CurrentList<Models.Aggregate> model = new Models.CurrentList<Models.Aggregate>() { Filter = filter, Data = aggregates };
+
+			ViewBag.Title = "Visitors";
+			return FindView("Aggregates", model);
+		}
+
+		public ActionResult Aggregates_Visits(Models.Filter filter)
 		{
 			filter = SetFilterDefaults(filter);
 
@@ -146,6 +163,7 @@ namespace KruisIT.Web.Analytics.Controllers
 
 			Models.CurrentList<Models.Aggregate> model = new Models.CurrentList<Models.Aggregate>() { Filter = filter, Data = aggregates };
 
+			ViewBag.Title = "Visits";
 			return FindView("Aggregates", model);
 		}
 

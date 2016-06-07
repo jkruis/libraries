@@ -33,9 +33,27 @@ namespace KruisIT.Web.Analytics.Database
 
 		public DbSet<Models.Visit> Analytics_Visits { get; set; }
 
+		public List<Models.Aggregate> GetVisitorsByDay(Models.Filter filter)
+		{
+			string sqlSelect = @"select StartTime as [Date], count(*) as [Count], null as Location from (
+									select distinct cast(StartTime as date) as [StartTime], IpAddress, Website, Location from Analytics_Visits
+								) drv";
+			string sqlGroupBy = "group by StartTime";
+
+			return GetAggregates(filter, sqlSelect, sqlGroupBy);
+		}
+
 		public List<Models.Aggregate> GetVisitsByDay(Models.Filter filter)
 		{
-			string sql = "select cast(StartTime as date) as [Date], count(*) as [Count], null as Location from Analytics_Visits";
+			string sqlSelect = "select cast(StartTime as date) as [Date], count(*) as [Count], null as Location from Analytics_Visits";
+			string sqlGroupBy = "group by cast(StartTime as date)";
+
+			return GetAggregates(filter, sqlSelect, sqlGroupBy);
+		}
+
+		public List<Models.Aggregate> GetAggregates(Models.Filter filter, string sqlSelect, string sqlGroupBy)
+		{
+			string sql = sqlSelect;
 			if (!String.IsNullOrEmpty(filter.Website))
 			{
 				sql += String.Format(" where Website = '{0}'", filter.Website);
@@ -55,7 +73,7 @@ namespace KruisIT.Web.Analytics.Database
 				sql += String.Format(" and IpAddress = '{0}'", filter.Visitor);
 			}
 
-			sql += " group by cast(StartTime as date)";
+			sql += " " + sqlGroupBy;
 			var aggregates = this.Database.SqlQuery<Models.Aggregate>(sql).ToList();
 
 			for (int i = 1; i < aggregates.Count; i++)

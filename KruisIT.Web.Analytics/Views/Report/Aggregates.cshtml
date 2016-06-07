@@ -4,10 +4,12 @@
 
 	int maxCount = Model.Data.Any() ? Model.Data.Max(m => m.Count) : 0;
 	int dayCount = Model.Data.Count;
+
+	int aggregateTotal = Model.Data.Select(m => m.Count).Sum();
 }
 
+<h4>@aggregateTotal @ViewBag.Title</h4>
 <div class="analytics-aggregates analytics-aggregates-rotated">
-	<h4>Aggregates @dayCount</h4>
 
 	<span class="analytics-aggregates-y-label">@maxCount</span>
 

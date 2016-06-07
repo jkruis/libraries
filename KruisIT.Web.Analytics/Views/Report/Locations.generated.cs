@@ -48,7 +48,16 @@ WriteLiteral("\r\n\r\n<div");
 
 WriteLiteral(" class=\"analytics-locations\"");
 
-WriteLiteral(">\r\n\t<h4>Locations</h4>\r\n\r\n\t<ul>\r\n");
+WriteLiteral(">\r\n\t<h4>");
+
+            
+            #line 7 "..\..\Views\Report\Locations.cshtml"
+   Write(Model.Data.Count);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" Locations</h4>\r\n\r\n\t<ul>\r\n");
 
             
             #line 10 "..\..\Views\Report\Locations.cshtml"
