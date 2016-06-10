@@ -63,7 +63,7 @@ namespace KruisIT.Web.Analytics.Database
 				sql += " where Website is null";
 			}
 
-			sql += String.Format(" and StartTime > '{0}' and StartTime < '{1}'", filter.StartDate.Value.ToString("yyyy-MM-dd"), filter.EndDate.Value.ToString("yyyy-MM-dd") + " 23:59:59");
+			sql += String.Format(" and StartTime > '{0}' and StartTime < '{1}'", filter.StartDate.Value.ToString("yyyy-MM-dd"), filter.EndDate.Value.AddDays(1).ToString("yyyy-MM-dd") + " 00:00:00");
 
 			if (!String.IsNullOrEmpty(filter.Location)) {
 				sql += String.Format(" and Location = '{0}'", filter.Location);
