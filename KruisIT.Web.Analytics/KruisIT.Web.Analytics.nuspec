@@ -9,6 +9,8 @@
     <projectUrl>http://kruisit.nl/packages/kruisit.web.analytics</projectUrl>
     <description>$description$</description>
     <releaseNotes>
+1.6 Fixed a data bug
+1.5 Added Visitors view (vs Page Views)
 1.4 Added javascript to fit the data to the available width
 1.3 Added user agent and referrer
 1.2 Initial release
