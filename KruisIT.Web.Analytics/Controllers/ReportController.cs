@@ -10,13 +10,9 @@ using System.Web.Mvc;
 
 namespace KruisIT.Web.Analytics.Controllers
 {
-	// todo : add screenshot to docs. change kruisit.nl/packages to one package per line, small screenshot on the left. remove line around page title.
-
 	// todo : adds RazorGeneratorMvcStart to projects when the package is installed. shouldn't!
 
-	// feature-todo : combine with known users/ip-addresses, if possible.
-
-	// feature-todo : show referrer, user agent info. allow filtering.
+	// todo : show referrer, user agent info. allow filtering.
 
 	public class ReportController : Controller
 	{
@@ -148,7 +144,7 @@ namespace KruisIT.Web.Analytics.Controllers
 
 			Models.CurrentList<Models.Aggregate> model = new Models.CurrentList<Models.Aggregate>() { Filter = filter, Data = aggregates };
 
-			ViewBag.Title = "Visitors";
+			ViewBag.Title = "Daily Unique Visitors";
 			return FindView("Aggregates", model);
 		}
 
@@ -163,7 +159,7 @@ namespace KruisIT.Web.Analytics.Controllers
 
 			Models.CurrentList<Models.Aggregate> model = new Models.CurrentList<Models.Aggregate>() { Filter = filter, Data = aggregates };
 
-			ViewBag.Title = "Visits";
+			ViewBag.Title = "Page Views";
 			return FindView("Aggregates", model);
 		}
 
