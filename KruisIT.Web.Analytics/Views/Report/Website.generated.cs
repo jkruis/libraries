@@ -92,17 +92,8 @@ WriteLiteral("\t\t");
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n");
+WriteLiteral("\r\n\r\n\t\t");
 
-WriteLiteral("\t\t");
-
-            
-            #line 15 "..\..\Views\Report\Website.cshtml"
-   Write(Html.Action("Visitors", new { website = Model.Filter.Website, location = Model.Filter.Location, visitor = Model.Filter.Visitor }));
-
-            
-            #line default
-            #line hidden
 WriteLiteral("\r\n\r\n\t</div>\r\n\r\n");
 
         }

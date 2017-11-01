@@ -165,34 +165,13 @@ WriteLiteral(" ");
             
             #line 15 "..\..\Views\Report\Index.cshtml"
                                                                                                                  }
-
+			
             
             #line default
             #line hidden
-WriteLiteral("\t\t\t");
-
             
             #line 16 "..\..\Views\Report\Index.cshtml"
-             if (!String.IsNullOrEmpty(Model.Filter.Visitor)) {
-            
-            #line default
-            #line hidden
-WriteLiteral(" ");
-
-WriteLiteral(", Visitor: ");
-
-            
-            #line 16 "..\..\Views\Report\Index.cshtml"
-                                                                            Write(Model.Filter.Visitor);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" ");
-
-            
-            #line 16 "..\..\Views\Report\Index.cshtml"
-                                                                                                              }
+                                                                                                                   
 
             
             #line default

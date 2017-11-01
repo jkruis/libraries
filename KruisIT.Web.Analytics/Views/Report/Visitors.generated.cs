@@ -57,7 +57,7 @@ WriteLiteral(">\r\n\t<h4>");
             
             #line default
             #line hidden
-WriteLiteral(" Visitors</h4>\r\n\r\n\t<ul>\r\n");
+WriteLiteral(" Unique Visitors</h4>\r\n\r\n\t<ul>\r\n");
 
             
             #line 10 "..\..\Views\Report\Visitors.cshtml"
