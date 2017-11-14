@@ -1,4 +1,15 @@
 ﻿
+.analytics-menu { position: fixed; background-color: rgb(221, 221, 221); left: 0; top: 0; bottom: 0; width: 200px; padding: 70px 20px 50px 20px; }
+	.analytics-menu h2 { font-size: 24px; }
+		.analytics-menu h2 small { display: block; font-size: 14px; margin-top: 10px; }
+	.analytics-menu select { margin-top: 10px; }
+	.analytics-menu ul { margin-top: 10px; padding-left: 0; list-style: none; }
+
+
+.analytics-block { margin-left: 200px; margin-top: 40px; }
+
+table.analytics-data { width: 100%; }
+
 .analytics-aggregates .analytics-count { width: 300px; }
 	.analytics-aggregates .analytics-count div { background-color: #cce; border-bottom: 1px solid #fff }
 
@@ -24,3 +35,5 @@
 .analytics-locations li { }
 
 .analytics-website { margin-bottom: 50px; }
+
+#analytics-base-url { display: none; }

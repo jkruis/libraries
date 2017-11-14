@@ -101,33 +101,44 @@ namespace KruisIT.Web.Analytics.Controllers
 			return FindView("Index", model);
 		}
 
-		public ActionResult Website(Models.Filter filter)
+		//public ActionResult Website(Models.Filter filter)
+		//{
+		//	filter = SetFilterDefaults(filter);
+
+		//	Models.Current<string> model = new Models.Current<string>() { Filter = filter, Data = filter.Website };
+
+		//	return FindView("Website", model);
+		//}
+
+		//public ActionResult Visitors(Models.Filter filter)
+		//{
+		//	filter = SetFilterDefaults(filter);
+
+		//	var visitors = FilteredVisits(filter).Select(v => new Models.Visitor() { Address = v.IpAddress, Website = filter.Website }).Distinct().OrderBy(v => v).ToList();
+		//	Models.CurrentList<Models.Visitor> model = new Models.CurrentList<Models.Visitor>() { Filter = filter, Data = visitors };
+
+		//	return FindView("Visitors", model);
+		//}
+
+		//public ActionResult Locations(Models.Filter filter)
+		//{
+		//	filter = SetFilterDefaults(filter);
+
+		//	var locations = FilteredVisits(filter).Select(v => new Models.Location() { Url = v.Location, Website = filter.Website }).Distinct().OrderBy(l => l).ToList();
+		//	Models.CurrentList<Models.Location> model = new Models.CurrentList<Models.Location>() { Filter = filter, Data = locations };
+
+		//	return FindView("Locations", model);
+		//}
+
+		public ActionResult MostViewed(Models.Filter filter)
 		{
+			int itemCount = 20;
 			filter = SetFilterDefaults(filter);
 
-			Models.Current<string> model = new Models.Current<string>() { Filter = filter, Data = filter.Website };
+			var data = FilteredVisits(filter).GroupBy(v => v.Location).Select(g => new Models.Aggregate() { Location = g.Key, Count = g.Count() }).OrderByDescending(a => a.Count).Take(itemCount).ToList();
+			Models.CurrentList<Models.Aggregate> model = new Models.CurrentList<Models.Aggregate>() { Title = "Most Viewed", Filter = filter, Data = data };
 
-			return FindView("Website", model);
-		}
-
-		public ActionResult Visitors(Models.Filter filter)
-		{
-			filter = SetFilterDefaults(filter);
-
-			var visitors = FilteredVisits(filter).Select(v => new Models.Visitor() { Address = v.IpAddress, Website = filter.Website }).Distinct().OrderBy(v => v).ToList();
-			Models.CurrentList<Models.Visitor> model = new Models.CurrentList<Models.Visitor>() { Filter = filter, Data = visitors };
-
-			return FindView("Visitors", model);
-		}
-
-		public ActionResult Locations(Models.Filter filter)
-		{
-			filter = SetFilterDefaults(filter);
-
-			var locations = FilteredVisits(filter).Select(v => new Models.Location() { Url = v.Location, Website = filter.Website }).Distinct().OrderBy(l => l).ToList();
-			Models.CurrentList<Models.Location> model = new Models.CurrentList<Models.Location>() { Filter = filter, Data = locations };
-
-			return FindView("Locations", model);
+			return FindView("AggregatesList", model);
 		}
 
 		// todo : add UI for selecting period when Website is selected
@@ -142,9 +153,7 @@ namespace KruisIT.Web.Analytics.Controllers
 
 			var aggregates = db.GetVisitorsByDay(filter);
 
-			Models.CurrentList<Models.Aggregate> model = new Models.CurrentList<Models.Aggregate>() { Filter = filter, Data = aggregates };
-
-			ViewBag.Title = "Daily Unique Visitors";
+			Models.CurrentList<Models.Aggregate> model = new Models.CurrentList<Models.Aggregate>() { Title = "Daily Unique Visitors", Filter = filter, Data = aggregates };
 			return FindView("Aggregates", model);
 		}
 
@@ -157,9 +166,7 @@ namespace KruisIT.Web.Analytics.Controllers
 
 			var aggregates = db.GetVisitsByDay(filter);
 
-			Models.CurrentList<Models.Aggregate> model = new Models.CurrentList<Models.Aggregate>() { Filter = filter, Data = aggregates };
-
-			ViewBag.Title = "Page Views";
+			Models.CurrentList<Models.Aggregate> model = new Models.CurrentList<Models.Aggregate>() { Title = "Page Views", Filter = filter, Data = aggregates };
 			return FindView("Aggregates", model);
 		}
 

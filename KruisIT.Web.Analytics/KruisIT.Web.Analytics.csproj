@@ -129,6 +129,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Aggregates.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Report\AggregatesList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AggregatesList.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Report\Index.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -156,6 +161,10 @@
     <None Include="Views\Report\Aggregates.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Aggregates.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Report\AggregatesList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AggregatesList.generated.cs</LastGenOutput>
     </None>
     <None Include="Views\Report\Index.cshtml">
       <Generator>RazorGenerator</Generator>

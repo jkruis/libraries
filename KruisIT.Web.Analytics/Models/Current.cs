@@ -8,6 +8,7 @@ namespace KruisIT.Web.Analytics.Models
 {
 	public class CurrentList<T>
 	{
+		public string Title { get; set; }
 		public Filter Filter { get; set; }
 		public List<T> Data { get; set; }
 	}

@@ -1,0 +1,28 @@
+﻿@model KruisIT.Web.Analytics.Models.CurrentList<KruisIT.Web.Analytics.Models.Aggregate>
+@{
+	Layout = null;
+
+	int aggregateTotal = Model.Data.Select(m => m.Count).Sum();
+}
+
+<h4>@Model.Title</h4>
+<div class="analytics-aggregates">
+
+	<table class="analytics-data">
+		<thead>
+			<tr>
+				<th>@Html.DisplayNameFor(model => model.Data.FirstOrDefault().Count)</th>
+				<th>@Html.DisplayNameFor(model => model.Data.FirstOrDefault().Location)</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model.Data)
+			{
+				<tr>
+					<td>@item.Count</td>
+					<td>@item.Location</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

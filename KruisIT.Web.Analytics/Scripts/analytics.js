@@ -1,6 +1,6 @@
 ﻿if (window.attachEvent) {
-	window.attachEvent('onload', SizeDays);
-	window.attachEvent('onresize', SizeDays);
+	window.attachEvent('onload', Analytics_OnLoad);
+	window.attachEvent('onresize', Analytics_OnResize);
 } else {
 	if (window.onload) {
 		var curronload = window.onload;
@@ -8,19 +8,28 @@
 
 		var newonload = function (evt) {
 			curronload(evt);
-			SizeDays(evt);
+			Analytics_OnLoad(evt);
 		};
 		window.onload = newonload;
 
 		var newonresize = function (evt) {
 			curronresize(evt);
-			SizeDays(evt);
+			Analytics_OnResize(evt);
 		};
 		window.onresize = newonresize;
 	} else {
-		window.onload = SizeDays;
-		window.onresize = SizeDays;
+		window.onload = Analytics_OnLoad;
+		window.onresize = Analytics_OnResize;
 	}
+}
+
+function Analytics_OnLoad(evt) {
+	SizeDays(evt);
+	ActivateMenu(evt);
+}
+
+function Analytics_OnResize(evt) {
+	SizeDays(evt);
 }
 
 function getStyle(el, styleProp) {
@@ -38,6 +47,23 @@ function getElementsByClassName(el, name) {
 	} else {
 		return el.querySelectorAll(name);
 	}
+}
+
+function ActivateMenu() {
+	var websiteSelect = document.getElementById("analytics-select-website");
+	websiteSelect.onchange = function (e) {
+		updateData();
+	};
+
+	var viewSelect = document.getElementById("analytics-select-view");
+	var viewOptions = viewSelect.getElementsByTagName("input");
+
+	for (var i = 0; i < viewOptions.length; i++) {
+		viewOptions[i].onclick = function () {
+			updateData();
+		};
+	}
+	updateData();
 }
 
 function SizeDays() {
@@ -67,4 +93,38 @@ function SizeDays() {
 		}
 	}
 
+}
+
+function updateData() {
+
+	var website = document.getElementById("analytics-select-website").value;
+	// todo : get radio value
+	//var view = "Aggregates_Visits";
+	var view = document.querySelector('input[name=view]:checked').value
+
+
+	console.log("update: " + website + ", " + view)
+
+	var url = document.getElementById("analytics-base-url").innerHTML;
+	url += view + "?Website=" + website;
+
+	var request = new XMLHttpRequest();
+
+	request.onreadystatechange = function () {
+		if (request.readyState == XMLHttpRequest.DONE) {
+			if (request.status == 200) {
+				var target = document.getElementById("analytics-data");
+				target.innerHTML = request.responseText;
+			}
+			else if (request.status == 400) {
+				alert('There was an error 400');
+			}
+			else {
+				alert('something else other than 200 was returned');
+			}
+		}
+	};
+
+	request.open("GET", url, true);
+	request.send();
 }
