@@ -106,11 +106,15 @@ WriteLiteral("\t\t\t\t<tr>\r\n\t\t\t\t\t<td>");
             
             #line default
             #line hidden
-WriteLiteral("</td>\r\n\t\t\t\t\t<td>");
+WriteLiteral("</td>\r\n\t\t\t\t\t<td");
+
+WriteLiteral(" class=\"analytics-select-location\"");
+
+WriteLiteral(">");
 
             
             #line 23 "..\..\Views\Report\AggregatesList.cshtml"
-                   Write(item.Location);
+                                                     Write(Html.ActionLink(item.Location, "", new { location = item.Location }));
 
             
             #line default

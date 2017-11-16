@@ -20,7 +20,7 @@
 			{
 				<tr>
 					<td>@item.Count</td>
-					<td>@item.Location</td>
+					<td class="analytics-select-location">@Html.ActionLink(item.Location, "", new { location = item.Location })</td>
 				</tr>
 			}
 		</tbody>

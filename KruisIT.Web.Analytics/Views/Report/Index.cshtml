@@ -12,16 +12,15 @@
 		<small>
 			@Model.Filter.StartDate.Value.ToString("yyyy-MM-dd")<br />-<br />
 			@Model.Filter.EndDate.Value.ToString("yyyy-MM-dd")
-			@if (!String.IsNullOrEmpty(Model.Filter.Location))
-			{ <text>, Location: @Model.Filter.Location</text> }
 		</small>
 	</h2>
 
+	<h3>website</h3>
 	@if (Model.Data.Any())
 	{
 		if (Model.Data.Count > 1)
 		{
-			<select id="analytics-select-website">
+			<select id="analytics-filter-website">
 				@foreach (var site in Model.Data)
 				{
 					<option>@site</option>
@@ -38,7 +37,13 @@
 		<div>No Website</div>
 	}
 
-	<ul id="analytics-select-view">
+	<div id="analytics-filter-location">
+		<h3>location</h3>
+		<input id="analytics-filter-location-value" type="text" value="" />
+		<button class="clear">x</button>
+	</div>
+
+	<ul id="analytics-filter-view">
 		<li><input type="radio" name="view" id="vwVisits" value="Aggregates_Visits" checked="checked" /><label for="vwVisits">Page views</label></li>
 		<li><input type="radio" name="view" id="vwVisitors" value="Aggregates_Visitors" /><label for="vwVisitors">Visitors</label></li>
 		<li><input type="radio" name="view" id="vwMostViewed" value="MostViewed" /><label for="vwMostViewed">Most viewed</label></li>

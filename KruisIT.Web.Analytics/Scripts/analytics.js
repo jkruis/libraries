@@ -26,6 +26,19 @@
 function Analytics_OnLoad(evt) {
 	SizeDays(evt);
 	ActivateMenu(evt);
+
+	$("body").on("click", ".analytics-select-location a", function () {
+		$("#analytics-filter-location-value").val($(this).html());
+		document.getElementById("vwVisits").checked = true;
+		updateData();
+		return false;
+	});
+
+	$("body").on("click", "#analytics-filter-location .clear", function () {
+		$("#analytics-filter-location-value").val("");
+		updateData();
+	});
+
 }
 
 function Analytics_OnResize(evt) {
@@ -50,19 +63,25 @@ function getElementsByClassName(el, name) {
 }
 
 function ActivateMenu() {
-	var websiteSelect = document.getElementById("analytics-select-website");
-	websiteSelect.onchange = function (e) {
+	var websiteFilter = document.getElementById("analytics-filter-website");
+	websiteFilter.onchange = function (e) {
 		updateData();
 	};
 
-	var viewSelect = document.getElementById("analytics-select-view");
-	var viewOptions = viewSelect.getElementsByTagName("input");
+	var viewFilter = document.getElementById("analytics-filter-view");
+	var viewOptions = viewFilter.getElementsByTagName("input");
 
 	for (var i = 0; i < viewOptions.length; i++) {
 		viewOptions[i].onclick = function () {
 			updateData();
 		};
 	}
+
+	//var locationFilter = document.getElementById("analytics-filter-location-value");
+	//locationFilter.oninput = function (e) {
+	//	updateData();
+	//};
+
 	updateData();
 }
 
@@ -97,16 +116,14 @@ function SizeDays() {
 
 function updateData() {
 
-	var website = document.getElementById("analytics-select-website").value;
-	// todo : get radio value
-	//var view = "Aggregates_Visits";
+	var website = document.getElementById("analytics-filter-website").value;
 	var view = document.querySelector('input[name=view]:checked').value
+	var location = document.getElementById("analytics-filter-location-value").value;
 
-
-	console.log("update: " + website + ", " + view)
+	console.log("update: " + website + ", " + view + ", " + location)
 
 	var url = document.getElementById("analytics-base-url").innerHTML;
-	url += view + "?Website=" + website;
+	url += view + "?Website=" + website + "&Location=" + location;
 
 	var request = new XMLHttpRequest();
 
