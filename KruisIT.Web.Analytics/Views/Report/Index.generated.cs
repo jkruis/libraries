@@ -111,16 +111,16 @@ WriteLiteral("\t\t\t");
             
             #line default
             #line hidden
-WriteLiteral("\r\n\t\t</small>\r\n\t</h2>\r\n\r\n\t<h3>website</h3>\r\n");
+WriteLiteral("\r\n\t\t</small>\r\n\t</h2>\r\n\r\n");
 
             
-            #line 19 "..\..\Views\Report\Index.cshtml"
+            #line 18 "..\..\Views\Report\Index.cshtml"
 	
             
             #line default
             #line hidden
             
-            #line 19 "..\..\Views\Report\Index.cshtml"
+            #line 18 "..\..\Views\Report\Index.cshtml"
      if (Model.Data.Any())
 	{
 		if (Model.Data.Count > 1)
@@ -129,6 +129,8 @@ WriteLiteral("\r\n\t\t</small>\r\n\t</h2>\r\n\r\n\t<h3>website</h3>\r\n");
             
             #line default
             #line hidden
+WriteLiteral("\t\t\t<h3>website</h3>\r\n");
+
 WriteLiteral("\t\t\t<select");
 
 WriteLiteral(" id=\"analytics-filter-website\"");
@@ -199,7 +201,7 @@ WriteLiteral("</div>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("\t\t<div>No Website</div>\r\n");
+WriteLiteral("\t\t<div>No Data</div>\r\n");
 
             
             #line 38 "..\..\Views\Report\Index.cshtml"
@@ -224,7 +226,7 @@ WriteLiteral(" />\r\n\t\t<button");
 
 WriteLiteral(" class=\"clear\"");
 
-WriteLiteral(">x</button>\r\n\t</div>\r\n\r\n\t<ul");
+WriteLiteral(">x</button>\r\n\t</div>\r\n\r\n\t<h3>view</h3>\r\n\t<ul");
 
 WriteLiteral(" id=\"analytics-filter-view\"");
 
@@ -279,7 +281,7 @@ WriteLiteral(" id=\"analytics-base-url\"");
 WriteLiteral(">");
 
             
-            #line 52 "..\..\Views\Report\Index.cshtml"
+            #line 53 "..\..\Views\Report\Index.cshtml"
                              Write(ViewBag.Url);
 
             

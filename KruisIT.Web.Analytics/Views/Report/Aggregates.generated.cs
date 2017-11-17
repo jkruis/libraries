@@ -53,21 +53,21 @@ WriteLiteral("\r\n\r\n<h4>");
 
             
             #line 11 "..\..\Views\Report\Aggregates.cshtml"
-Write(Model.Title);
+Write(aggregateTotal);
 
             
             #line default
             #line hidden
-WriteLiteral(" - ");
+WriteLiteral(" ");
 
             
             #line 11 "..\..\Views\Report\Aggregates.cshtml"
-              Write(aggregateTotal);
+               Write(Model.Title);
 
             
             #line default
             #line hidden
-WriteLiteral(" </h4>\r\n<div");
+WriteLiteral("</h4>\r\n<div");
 
 WriteLiteral(" class=\"analytics-aggregates analytics-aggregates-rotated\"");
 
@@ -184,47 +184,47 @@ WriteLiteral("</div>\r\n");
             #line hidden
 WriteLiteral("\t\t\t\t\t</td>\r\n\t\t\t\t\t<td");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1265), Tuple.Create("\"", 1337)
-, Tuple.Create(Tuple.Create("", 1273), Tuple.Create("analytics-count", 1273), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1262), Tuple.Create("\"", 1334)
+, Tuple.Create(Tuple.Create("", 1270), Tuple.Create("analytics-count", 1270), true)
             
             #line 39 "..\..\Views\Report\Aggregates.cshtml"
-, Tuple.Create(Tuple.Create(" ", 1288), Tuple.Create<System.Object, System.Int32>(agg.Count == 0 ? "analytics-count-empty" : ""
+, Tuple.Create(Tuple.Create(" ", 1285), Tuple.Create<System.Object, System.Int32>(agg.Count == 0 ? "analytics-count-empty" : ""
             
             #line default
             #line hidden
-, 1289), false)
+, 1286), false)
 );
 
 WriteLiteral("><div");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 1343), Tuple.Create("\"", 1367)
-, Tuple.Create(Tuple.Create("", 1351), Tuple.Create("width:", 1351), true)
+WriteAttribute("style", Tuple.Create(" style=\"", 1340), Tuple.Create("\"", 1364)
+, Tuple.Create(Tuple.Create("", 1348), Tuple.Create("width:", 1348), true)
             
             #line 39 "..\..\Views\Report\Aggregates.cshtml"
-                                    , Tuple.Create(Tuple.Create(" ", 1357), Tuple.Create<System.Object, System.Int32>(width
+                                    , Tuple.Create(Tuple.Create(" ", 1354), Tuple.Create<System.Object, System.Int32>(width
             
             #line default
             #line hidden
-, 1358), false)
-, Tuple.Create(Tuple.Create("", 1366), Tuple.Create("%", 1366), true)
+, 1355), false)
+, Tuple.Create(Tuple.Create("", 1363), Tuple.Create("%", 1363), true)
 );
 
-WriteAttribute("title", Tuple.Create(" title=\"", 1368), Tuple.Create("\"", 1421)
+WriteAttribute("title", Tuple.Create(" title=\"", 1365), Tuple.Create("\"", 1418)
             
             #line 39 "..\..\Views\Report\Aggregates.cshtml"
-                                                      , Tuple.Create(Tuple.Create("", 1376), Tuple.Create<System.Object, System.Int32>(agg.Date.ToString("yyyy-MM-dd")
+                                                      , Tuple.Create(Tuple.Create("", 1373), Tuple.Create<System.Object, System.Int32>(agg.Date.ToString("yyyy-MM-dd")
             
             #line default
             #line hidden
-, 1376), false)
-, Tuple.Create(Tuple.Create(" ", 1408), Tuple.Create(":", 1409), true)
+, 1373), false)
+, Tuple.Create(Tuple.Create(" ", 1405), Tuple.Create(":", 1406), true)
             
             #line 39 "..\..\Views\Report\Aggregates.cshtml"
-                                                                                        , Tuple.Create(Tuple.Create(" ", 1410), Tuple.Create<System.Object, System.Int32>(agg.Count
+                                                                                        , Tuple.Create(Tuple.Create(" ", 1407), Tuple.Create<System.Object, System.Int32>(agg.Count
             
             #line default
             #line hidden
-, 1411), false)
+, 1408), false)
 );
 
 WriteLiteral("><span>");

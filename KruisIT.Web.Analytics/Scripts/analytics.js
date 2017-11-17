@@ -1,4 +1,6 @@
-﻿if (window.attachEvent) {
+﻿var debug = true;
+
+if (window.attachEvent) {
 	window.attachEvent('onload', Analytics_OnLoad);
 	window.attachEvent('onresize', Analytics_OnResize);
 } else {
@@ -24,6 +26,8 @@
 }
 
 function Analytics_OnLoad(evt) {
+	if (debug) { console.log("onLoad"); }
+
 	SizeDays(evt);
 	ActivateMenu(evt);
 
@@ -42,6 +46,8 @@ function Analytics_OnLoad(evt) {
 }
 
 function Analytics_OnResize(evt) {
+	if (debug) { console.log("onResize"); }
+
 	SizeDays(evt);
 }
 
@@ -88,7 +94,6 @@ function ActivateMenu() {
 function SizeDays() {
 	var containers = getElementsByClassName(document, "analytics-aggregates-rotated");
 	
-
 	for (var i = 0; i < containers.length; i++) {
 		var container = containers[i];
 		var table = container.getElementsByTagName("table")[0];
@@ -100,14 +105,21 @@ function SizeDays() {
 		var itemCount = getElementsByClassName(table, "analytics-count").length;
 		var itemWidth = availableWidth / itemCount;
 
-		//console.log(availableWidth);
-		//console.log(itemCount);
-		//console.log(itemWidth);
+		console.log(availableWidth);
+		console.log(itemCount);
+		console.log(itemWidth);
 
 		var cells = getElementsByClassName(table, "analytics-count");
 
 		for (var j = 0; j < cells.length; j++) {
 			var div = cells[j].getElementsByTagName("div")[0];
+			div.style.height = itemWidth + "px";
+		}
+
+		var cells2 = getElementsByClassName(table, "analytics-date");
+
+		for (var j = 0; j < cells2.length; j++) {
+			var div = cells2[j].getElementsByTagName("div")[0];
 			div.style.height = itemWidth + "px";
 		}
 	}
@@ -125,6 +137,9 @@ function updateData() {
 	var url = document.getElementById("analytics-base-url").innerHTML;
 	url += view + "?Website=" + website + "&Location=" + location;
 
+
+	document.getElementById("analytics-filter-location").style.display = ((location != "") ? "block" : "none");
+
 	var request = new XMLHttpRequest();
 
 	request.onreadystatechange = function () {
@@ -132,6 +147,7 @@ function updateData() {
 			if (request.status == 200) {
 				var target = document.getElementById("analytics-data");
 				target.innerHTML = request.responseText;
+				SizeDays();
 			}
 			else if (request.status == 400) {
 				alert('There was an error 400');

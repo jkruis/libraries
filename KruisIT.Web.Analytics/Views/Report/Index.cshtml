@@ -15,11 +15,11 @@
 		</small>
 	</h2>
 
-	<h3>website</h3>
 	@if (Model.Data.Any())
 	{
 		if (Model.Data.Count > 1)
 		{
+			<h3>website</h3>
 			<select id="analytics-filter-website">
 				@foreach (var site in Model.Data)
 				{
@@ -34,7 +34,7 @@
 	}
 	else
 	{
-		<div>No Website</div>
+		<div>No Data</div>
 	}
 
 	<div id="analytics-filter-location">
@@ -43,6 +43,7 @@
 		<button class="clear">x</button>
 	</div>
 
+	<h3>view</h3>
 	<ul id="analytics-filter-view">
 		<li><input type="radio" name="view" id="vwVisits" value="Aggregates_Visits" checked="checked" /><label for="vwVisits">Page views</label></li>
 		<li><input type="radio" name="view" id="vwVisitors" value="Aggregates_Visitors" /><label for="vwVisitors">Visitors</label></li>

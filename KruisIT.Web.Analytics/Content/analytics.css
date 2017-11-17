@@ -7,9 +7,11 @@
 	.analytics-menu ul { margin-top: 10px; padding-left: 0; list-style: none; }
 		.analytics-menu ul label { margin-left: 0.5em; }
 
+#analytics-filter-website { width: 100%; }
+
 #analytics-filter-location { height: 24px; margin-bottom: 30px; }
-	#analytics-filter-location-value { background-color: inherit; border: none; margin-left: 10px; float: left; }
-	#analytics-filter-location .clear { background-color: inherit; border: none; float: right; margin-top: -22px; }
+	#analytics-filter-location-value { border: none; float: left; padding-left: 6px; }
+	#analytics-filter-location .clear { background-color: inherit; border: none; float: right; font-size: 16px; margin-top: -23px; }
 
 .analytics-block { margin-left: 200px; margin-top: 40px; }
 
