@@ -135,7 +135,7 @@ function setRightLabel(container) {
 
 	var cells = getElementsByClassName(container.getElementsByTagName("table")[0], "analytics-count");
 	for (var j = 0; j < cells.length; j++) {
-		var value = cells[j].getElementsByTagName("div")[0].getElementsByTagName("span")[0].innerHTML;
+		var value = parseInt(cells[j].getElementsByTagName("div")[0].getElementsByTagName("span")[0].innerHTML);
 
 		lastCount = value;
 		if (value > maxCount) maxCount = value;
@@ -143,9 +143,9 @@ function setRightLabel(container) {
 
 	var labelRight = document.getElementById("analytics-aggregates-y-label-right");
 	if (typeof labelRight != "undefined" && labelRight != null) {
-		console.log("label");
-		console.log(lastCount);
-		console.log(maxCount);
+		//console.log("label");
+		//console.log(lastCount);
+		//console.log(maxCount);
 
 		var mTop = 298 - (298 * lastCount / maxCount);
 		console.log(mTop);
