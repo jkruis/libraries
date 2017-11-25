@@ -11,7 +11,8 @@
 <h4>@aggregateTotal @Model.Title</h4>
 <div class="analytics-aggregates analytics-aggregates-rotated">
 
-	<span class="analytics-aggregates-y-label">@maxCount</span>
+	<span class="analytics-aggregates-y-label" id="analytics-aggregates-y-label-left">@maxCount</span>
+	<span class="analytics-aggregates-y-label" id="analytics-aggregates-y-label-right">@Model.Data.Last().Count</span>
 
 	<table>
 		<thead>

@@ -9,6 +9,7 @@
     <projectUrl>http://kruisit.nl/packages/kruisit.web.analytics</projectUrl>
     <description>$description$</description>
     <releaseNotes>
+2.2 Add value label on the last day
 2.1.2 Improve new UI
 2.0 New UI
 1.6 Fix a data bug

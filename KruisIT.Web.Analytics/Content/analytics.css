@@ -39,7 +39,9 @@ table.analytics-data { width: 100%; }
 		.analytics-aggregates-rotated table td { padding-top: 0; padding-bottom: 0; }
 		.analytics-aggregates-rotated table td div { height: 12px; }
 
-	.analytics-aggregates.analytics-aggregates-rotated .analytics-aggregates-y-label { display: block; float: left; font-size: small; margin-left: -32px; }
+	.analytics-aggregates.analytics-aggregates-rotated .analytics-aggregates-y-label { display: block; float: left; font-size: small; }
+		#analytics-aggregates-y-label-left { margin-left: -32px; }
+		#analytics-aggregates-y-label-right { position: absolute; right: 10px; }
 
 .analytics-locations li { }
 

@@ -95,7 +95,7 @@ function ActivateMenu() {
 
 function SizeDays() {
 	var containers = getElementsByClassName(document, "analytics-aggregates-rotated");
-	
+
 	for (var i = 0; i < containers.length; i++) {
 		var container = containers[i];
 		var table = container.getElementsByTagName("table")[0];
@@ -107,9 +107,9 @@ function SizeDays() {
 		var itemCount = getElementsByClassName(table, "analytics-count").length;
 		var itemWidth = availableWidth / itemCount;
 
-		console.log(availableWidth);
-		console.log(itemCount);
-		console.log(itemWidth);
+		//console.log(availableWidth);
+		//console.log(itemCount);
+		//console.log(itemWidth);
 
 		var cells = getElementsByClassName(table, "analytics-count");
 
@@ -124,8 +124,33 @@ function SizeDays() {
 			var div = cells2[j].getElementsByTagName("div")[0];
 			div.style.height = itemWidth + "px";
 		}
+
+		setRightLabel(container);
+	}
+}
+
+function setRightLabel(container) {
+	var lastCount = 0;
+	var maxCount = 0;
+
+	var cells = getElementsByClassName(container.getElementsByTagName("table")[0], "analytics-count");
+	for (var j = 0; j < cells.length; j++) {
+		var value = cells[j].getElementsByTagName("div")[0].getElementsByTagName("span")[0].innerHTML;
+
+		lastCount = value;
+		if (value > maxCount) maxCount = value;
 	}
 
+	var labelRight = document.getElementById("analytics-aggregates-y-label-right");
+	if (typeof labelRight != "undefined" && labelRight != null) {
+		console.log("label");
+		console.log(lastCount);
+		console.log(maxCount);
+
+		var mTop = 298 - (298 * lastCount / maxCount);
+		console.log(mTop);
+		labelRight.style.marginTop = mTop + "px";
+	}
 }
 
 function updateData() {
