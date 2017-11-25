@@ -1,19 +1,18 @@
 ﻿
-.analytics-menu { position: fixed; background-color: rgb(221, 221, 221); left: 0; top: 0; bottom: 0; width: 200px; padding: 70px 20px 50px 20px; }
-	.analytics-menu h2 { font-size: 24px; }
-		.analytics-menu h2 small { display: block; font-size: 14px; margin-top: 10px; }
-	.analytics-menu h3 { font-size: 16px; margin-bottom: 0; }
+.analytics-menu { background-color: rgb(221, 221, 221); left: 0; top: 0; bottom: 0; padding: 5px; }
+	.analytics-menu h3 { display: inline-block; font-size: 16px; font-weight: bold; margin: 0 5px 0 20px; }
 	.analytics-menu select { }
-	.analytics-menu ul { margin-top: 10px; padding-left: 0; list-style: none; }
-		.analytics-menu ul label { margin-left: 0.5em; }
+	.analytics-menu ul { display: inline-block; margin-top: 10px; padding-left: 0; list-style: none; }
+		.analytics-menu li { display: inline; }
+		.analytics-menu ul label { font-weight: normal; margin-left: 0.5em; }
 
-#analytics-filter-website { width: 100%; }
+#analytics-filter-website { }
 
 #analytics-filter-location { height: 24px; margin-bottom: 30px; }
 	#analytics-filter-location-value { border: none; float: left; padding-left: 6px; }
 	#analytics-filter-location .clear { background-color: inherit; border: none; float: right; font-size: 16px; margin-top: -23px; }
 
-.analytics-block { margin-left: 200px; margin-top: 40px; }
+.analytics-block { margin-top: 20px; }
 
 table.analytics-data { width: 100%; }
 

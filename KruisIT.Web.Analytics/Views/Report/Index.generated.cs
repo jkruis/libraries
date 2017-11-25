@@ -74,53 +74,51 @@ WriteAttribute("src", Tuple.Create(" src=\"", 198), Tuple.Create("\"", 239)
 , Tuple.Create(Tuple.Create("", 218), Tuple.Create("Resource/analytics_js", 218), true)
 );
 
-WriteLiteral("></script>\r\n\r\n<div");
+WriteLiteral("></script>\r\n\r\n<h2>\r\n");
 
-WriteLiteral(" class=\"analytics-menu\"");
+WriteLiteral("\t");
 
-WriteLiteral(">\r\n\t<h2>\r\n");
+            
+            #line 10 "..\..\Views\Report\Index.cshtml"
+Write(ViewBag.Title);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\t<small>\r\n");
 
 WriteLiteral("\t\t");
 
             
-            #line 11 "..\..\Views\Report\Index.cshtml"
-   Write(ViewBag.Title);
+            #line 12 "..\..\Views\Report\Index.cshtml"
+   Write(Model.Filter.StartDate.Value.ToString("yyyy-MM-dd"));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\t\t<small>\r\n");
-
-WriteLiteral("\t\t\t");
+WriteLiteral(" - ");
 
             
-            #line 13 "..\..\Views\Report\Index.cshtml"
-       Write(Model.Filter.StartDate.Value.ToString("yyyy-MM-dd"));
+            #line 12 "..\..\Views\Report\Index.cshtml"
+                                                          Write(Model.Filter.EndDate.Value.ToString("yyyy-MM-dd"));
 
             
             #line default
             #line hidden
-WriteLiteral("<br />-<br />\r\n");
+WriteLiteral("\r\n\t</small>\r\n</h2>\r\n\r\n<div");
 
-WriteLiteral("\t\t\t");
+WriteLiteral(" class=\"analytics-menu\"");
 
-            
-            #line 14 "..\..\Views\Report\Index.cshtml"
-       Write(Model.Filter.EndDate.Value.ToString("yyyy-MM-dd"));
+WriteLiteral(">\r\n");
 
             
-            #line default
-            #line hidden
-WriteLiteral("\r\n\t\t</small>\r\n\t</h2>\r\n\r\n");
-
-            
-            #line 18 "..\..\Views\Report\Index.cshtml"
+            #line 17 "..\..\Views\Report\Index.cshtml"
 	
             
             #line default
             #line hidden
             
-            #line 18 "..\..\Views\Report\Index.cshtml"
+            #line 17 "..\..\Views\Report\Index.cshtml"
      if (Model.Data.Any())
 	{
 		if (Model.Data.Count > 1)
@@ -138,13 +136,13 @@ WriteLiteral(" id=\"analytics-filter-website\"");
 WriteLiteral(">\r\n");
 
             
-            #line 24 "..\..\Views\Report\Index.cshtml"
+            #line 23 "..\..\Views\Report\Index.cshtml"
 				
             
             #line default
             #line hidden
             
-            #line 24 "..\..\Views\Report\Index.cshtml"
+            #line 23 "..\..\Views\Report\Index.cshtml"
                  foreach (var site in Model.Data)
 				{
 
@@ -154,7 +152,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("\t\t\t\t\t<option>");
 
             
-            #line 26 "..\..\Views\Report\Index.cshtml"
+            #line 25 "..\..\Views\Report\Index.cshtml"
                        Write(site);
 
             
@@ -163,7 +161,7 @@ WriteLiteral("\t\t\t\t\t<option>");
 WriteLiteral("</option>\r\n");
 
             
-            #line 27 "..\..\Views\Report\Index.cshtml"
+            #line 26 "..\..\Views\Report\Index.cshtml"
 				}
 
             
@@ -172,7 +170,7 @@ WriteLiteral("</option>\r\n");
 WriteLiteral("\t\t\t</select>\r\n");
 
             
-            #line 29 "..\..\Views\Report\Index.cshtml"
+            #line 28 "..\..\Views\Report\Index.cshtml"
 		}
 		else
 		{
@@ -183,7 +181,7 @@ WriteLiteral("\t\t\t</select>\r\n");
 WriteLiteral("\t\t\t<div>");
 
             
-            #line 32 "..\..\Views\Report\Index.cshtml"
+            #line 31 "..\..\Views\Report\Index.cshtml"
             Write(Model.Data.First());
 
             
@@ -192,7 +190,7 @@ WriteLiteral("\t\t\t<div>");
 WriteLiteral("</div>\r\n");
 
             
-            #line 33 "..\..\Views\Report\Index.cshtml"
+            #line 32 "..\..\Views\Report\Index.cshtml"
 		}
 	}
 	else
@@ -204,7 +202,7 @@ WriteLiteral("</div>\r\n");
 WriteLiteral("\t\t<div>No Data</div>\r\n");
 
             
-            #line 38 "..\..\Views\Report\Index.cshtml"
+            #line 37 "..\..\Views\Report\Index.cshtml"
 	}
 
             
@@ -281,7 +279,7 @@ WriteLiteral(" id=\"analytics-base-url\"");
 WriteLiteral(">");
 
             
-            #line 53 "..\..\Views\Report\Index.cshtml"
+            #line 52 "..\..\Views\Report\Index.cshtml"
                              Write(ViewBag.Url);
 
             

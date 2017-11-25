@@ -6,15 +6,14 @@
 <link rel="stylesheet" href="@(ViewBag.Url)Resource/analytics_css" />
 <script type="text/javascript" src="@(ViewBag.Url)Resource/analytics_js"></script>
 
-<div class="analytics-menu">
-	<h2>
-		@ViewBag.Title
-		<small>
-			@Model.Filter.StartDate.Value.ToString("yyyy-MM-dd")<br />-<br />
-			@Model.Filter.EndDate.Value.ToString("yyyy-MM-dd")
-		</small>
-	</h2>
+<h2>
+	@ViewBag.Title
+	<small>
+		@Model.Filter.StartDate.Value.ToString("yyyy-MM-dd") - @Model.Filter.EndDate.Value.ToString("yyyy-MM-dd")
+	</small>
+</h2>
 
+<div class="analytics-menu">
 	@if (Model.Data.Any())
 	{
 		if (Model.Data.Count > 1)
