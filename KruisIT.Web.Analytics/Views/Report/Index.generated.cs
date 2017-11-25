@@ -127,33 +127,35 @@ WriteLiteral(">\r\n");
             
             #line default
             #line hidden
-WriteLiteral("\t\t\t<h3>website</h3>\r\n");
-
-WriteLiteral("\t\t\t<select");
+WriteLiteral("\t\t\t<div");
 
 WriteLiteral(" id=\"analytics-filter-website\"");
+
+WriteLiteral(">\r\n\t\t\t\t<h3>website</h3>\r\n\t\t\t\t<select");
+
+WriteLiteral(" id=\"analytics-filter-website-value\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 23 "..\..\Views\Report\Index.cshtml"
-				
+            #line 24 "..\..\Views\Report\Index.cshtml"
+					
             
             #line default
             #line hidden
             
-            #line 23 "..\..\Views\Report\Index.cshtml"
-                 foreach (var site in Model.Data)
-				{
+            #line 24 "..\..\Views\Report\Index.cshtml"
+                     foreach (var site in Model.Data)
+					{
 
             
             #line default
             #line hidden
-WriteLiteral("\t\t\t\t\t<option>");
+WriteLiteral("\t\t\t\t\t\t<option>");
 
             
-            #line 25 "..\..\Views\Report\Index.cshtml"
-                       Write(site);
+            #line 26 "..\..\Views\Report\Index.cshtml"
+                           Write(site);
 
             
             #line default
@@ -161,16 +163,16 @@ WriteLiteral("\t\t\t\t\t<option>");
 WriteLiteral("</option>\r\n");
 
             
-            #line 26 "..\..\Views\Report\Index.cshtml"
-				}
+            #line 27 "..\..\Views\Report\Index.cshtml"
+					}
 
             
             #line default
             #line hidden
-WriteLiteral("\t\t\t</select>\r\n");
+WriteLiteral("\t\t\t\t</select>\r\n\t\t\t</div>\r\n");
 
             
-            #line 28 "..\..\Views\Report\Index.cshtml"
+            #line 30 "..\..\Views\Report\Index.cshtml"
 		}
 		else
 		{
@@ -181,7 +183,7 @@ WriteLiteral("\t\t\t</select>\r\n");
 WriteLiteral("\t\t\t<div>");
 
             
-            #line 31 "..\..\Views\Report\Index.cshtml"
+            #line 33 "..\..\Views\Report\Index.cshtml"
             Write(Model.Data.First());
 
             
@@ -190,7 +192,7 @@ WriteLiteral("\t\t\t<div>");
 WriteLiteral("</div>\r\n");
 
             
-            #line 32 "..\..\Views\Report\Index.cshtml"
+            #line 34 "..\..\Views\Report\Index.cshtml"
 		}
 	}
 	else
@@ -202,7 +204,7 @@ WriteLiteral("</div>\r\n");
 WriteLiteral("\t\t<div>No Data</div>\r\n");
 
             
-            #line 37 "..\..\Views\Report\Index.cshtml"
+            #line 39 "..\..\Views\Report\Index.cshtml"
 	}
 
             
@@ -224,11 +226,15 @@ WriteLiteral(" />\r\n\t\t<button");
 
 WriteLiteral(" class=\"clear\"");
 
-WriteLiteral(">x</button>\r\n\t</div>\r\n\r\n\t<h3>view</h3>\r\n\t<ul");
+WriteLiteral(">x</button>\r\n\t</div>\r\n\r\n\t<div");
 
 WriteLiteral(" id=\"analytics-filter-view\"");
 
-WriteLiteral(">\r\n\t\t<li><input");
+WriteLiteral(">\r\n\t\t<h3>view</h3>\r\n\t\t<ul");
+
+WriteLiteral(" id=\"analytics-filter-view-value\"");
+
+WriteLiteral(">\r\n\t\t\t<li><input");
 
 WriteLiteral(" type=\"radio\"");
 
@@ -244,7 +250,7 @@ WriteLiteral(" /><label");
 
 WriteLiteral(" for=\"vwVisits\"");
 
-WriteLiteral(">Page views</label></li>\r\n\t\t<li><input");
+WriteLiteral(">Page views</label></li>\r\n\t\t\t<li><input");
 
 WriteLiteral(" type=\"radio\"");
 
@@ -258,7 +264,7 @@ WriteLiteral(" /><label");
 
 WriteLiteral(" for=\"vwVisitors\"");
 
-WriteLiteral(">Visitors</label></li>\r\n\t\t<li><input");
+WriteLiteral(">Visitors</label></li>\r\n\t\t\t<li><input");
 
 WriteLiteral(" type=\"radio\"");
 
@@ -272,14 +278,14 @@ WriteLiteral(" /><label");
 
 WriteLiteral(" for=\"vwMostViewed\"");
 
-WriteLiteral(">Most viewed</label></li>\r\n\t</ul>\r\n\r\n\t<div");
+WriteLiteral(">Most viewed</label></li>\r\n\t\t</ul>\r\n\t</div>\r\n\r\n\t<div");
 
 WriteLiteral(" id=\"analytics-base-url\"");
 
 WriteLiteral(">");
 
             
-            #line 52 "..\..\Views\Report\Index.cshtml"
+            #line 56 "..\..\Views\Report\Index.cshtml"
                              Write(ViewBag.Url);
 
             

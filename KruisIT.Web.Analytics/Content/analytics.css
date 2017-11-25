@@ -1,6 +1,9 @@
 ﻿
 .analytics-menu { background-color: rgb(221, 221, 221); left: 0; top: 0; bottom: 0; padding: 5px; }
+	.analytics-menu > div { display: inline-block; }
+
 	.analytics-menu h3 { display: inline-block; font-size: 16px; font-weight: bold; margin: 0 5px 0 20px; }
+		.analytics-menu div:not(:first-child) h3::before { content: "|"; margin-right: 20px; }
 	.analytics-menu select { }
 	.analytics-menu ul { display: inline-block; margin-top: 10px; padding-left: 0; list-style: none; }
 		.analytics-menu li { display: inline; }
@@ -9,8 +12,8 @@
 #analytics-filter-website { }
 
 #analytics-filter-location { height: 24px; margin-bottom: 30px; }
-	#analytics-filter-location-value { border: none; float: left; padding-left: 6px; }
-	#analytics-filter-location .clear { background-color: inherit; border: none; float: right; font-size: 16px; margin-top: -23px; }
+	#analytics-filter-location-value { border: none; padding-left: 6px; }
+	#analytics-filter-location .clear { background-color: inherit; border: none; font-size: 16px; margin-top: -23px; }
 
 .analytics-block { margin-top: 20px; }
 

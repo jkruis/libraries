@@ -18,13 +18,15 @@
 	{
 		if (Model.Data.Count > 1)
 		{
-			<h3>website</h3>
-			<select id="analytics-filter-website">
-				@foreach (var site in Model.Data)
-				{
-					<option>@site</option>
-				}
-			</select>
+			<div id="analytics-filter-website">
+				<h3>website</h3>
+				<select id="analytics-filter-website-value">
+					@foreach (var site in Model.Data)
+					{
+						<option>@site</option>
+					}
+				</select>
+			</div>
 		}
 		else
 		{
@@ -42,12 +44,14 @@
 		<button class="clear">x</button>
 	</div>
 
-	<h3>view</h3>
-	<ul id="analytics-filter-view">
-		<li><input type="radio" name="view" id="vwVisits" value="Aggregates_Visits" checked="checked" /><label for="vwVisits">Page views</label></li>
-		<li><input type="radio" name="view" id="vwVisitors" value="Aggregates_Visitors" /><label for="vwVisitors">Visitors</label></li>
-		<li><input type="radio" name="view" id="vwMostViewed" value="MostViewed" /><label for="vwMostViewed">Most viewed</label></li>
-	</ul>
+	<div id="analytics-filter-view">
+		<h3>view</h3>
+		<ul id="analytics-filter-view-value">
+			<li><input type="radio" name="view" id="vwVisits" value="Aggregates_Visits" checked="checked" /><label for="vwVisits">Page views</label></li>
+			<li><input type="radio" name="view" id="vwVisitors" value="Aggregates_Visitors" /><label for="vwVisitors">Visitors</label></li>
+			<li><input type="radio" name="view" id="vwMostViewed" value="MostViewed" /><label for="vwMostViewed">Most viewed</label></li>
+		</ul>
+	</div>
 
 	<div id="analytics-base-url">@(ViewBag.Url)</div>
 </div>
