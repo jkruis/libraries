@@ -74,6 +74,8 @@ namespace KruisIT.Web.Analytics.Database
 			}
 
 			sql += " " + sqlGroupBy;
+			sql += " order by [date]";
+
 			var aggregates = this.Database.SqlQuery<Models.Aggregate>(sql).ToList();
 
 			for (int i = 1; i < aggregates.Count; i++)
