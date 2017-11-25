@@ -16,22 +16,22 @@
 <div class="analytics-menu">
 	@if (Model.Data.Any())
 	{
-		if (Model.Data.Count > 1)
-		{
-			<div id="analytics-filter-website">
-				<h3>website</h3>
+		<div id="analytics-filter-website">
+			<h3>website</h3>
+			@if (Model.Data.Count > 1)
+			{
 				<select id="analytics-filter-website-value">
 					@foreach (var site in Model.Data)
 					{
 						<option>@site</option>
 					}
 				</select>
-			</div>
-		}
-		else
-		{
-			<div>@Model.Data.First()</div>
-		}
+			}
+			else
+			{
+				<span id="analytics-filter-website-value">@Model.Data.First()</span>
+			}
+		</div>
 	}
 	else
 	{

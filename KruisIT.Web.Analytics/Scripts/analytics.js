@@ -70,9 +70,11 @@ function getElementsByClassName(el, name) {
 
 function ActivateMenu() {
 	var websiteFilter = document.getElementById("analytics-filter-website-value");
-	websiteFilter.onchange = function (e) {
-		updateData();
-	};
+	if (websiteFilter != null) {
+		websiteFilter.onchange = function (e) {
+			updateData();
+		};
+	}
 
 	var viewFilter = document.getElementById("analytics-filter-view-value");
 	var viewOptions = viewFilter.getElementsByTagName("input");
@@ -129,6 +131,10 @@ function SizeDays() {
 function updateData() {
 
 	var website = document.getElementById("analytics-filter-website-value").value;
+	if (typeof website == "undefined") {
+		website = document.getElementById("analytics-filter-website-value").innerHTML;
+	}
+
 	var view = document.querySelector('input[name=view]:checked').value
 	var location = document.getElementById("analytics-filter-location-value").value;
 

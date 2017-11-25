@@ -121,17 +121,31 @@ WriteLiteral(">\r\n");
             #line 17 "..\..\Views\Report\Index.cshtml"
      if (Model.Data.Any())
 	{
-		if (Model.Data.Count > 1)
-		{
 
             
             #line default
             #line hidden
-WriteLiteral("\t\t\t<div");
+WriteLiteral("\t\t<div");
 
 WriteLiteral(" id=\"analytics-filter-website\"");
 
-WriteLiteral(">\r\n\t\t\t\t<h3>website</h3>\r\n\t\t\t\t<select");
+WriteLiteral(">\r\n\t\t\t<h3>website</h3>\r\n");
+
+            
+            #line 21 "..\..\Views\Report\Index.cshtml"
+			
+            
+            #line default
+            #line hidden
+            
+            #line 21 "..\..\Views\Report\Index.cshtml"
+             if (Model.Data.Count > 1)
+			{
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\t\t\t\t<select");
 
 WriteLiteral(" id=\"analytics-filter-website-value\"");
 
@@ -169,31 +183,43 @@ WriteLiteral("</option>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("\t\t\t\t</select>\r\n\t\t\t</div>\r\n");
+WriteLiteral("\t\t\t\t</select>\r\n");
 
             
-            #line 30 "..\..\Views\Report\Index.cshtml"
-		}
-		else
-		{
+            #line 29 "..\..\Views\Report\Index.cshtml"
+			}
+			else
+			{
 
             
             #line default
             #line hidden
-WriteLiteral("\t\t\t<div>");
+WriteLiteral("\t\t\t\t<span");
+
+WriteLiteral(" id=\"analytics-filter-website-value\"");
+
+WriteLiteral(">");
+
+            
+            #line 32 "..\..\Views\Report\Index.cshtml"
+                                                     Write(Model.Data.First());
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n");
 
             
             #line 33 "..\..\Views\Report\Index.cshtml"
-            Write(Model.Data.First());
+			}
 
             
             #line default
             #line hidden
-WriteLiteral("</div>\r\n");
+WriteLiteral("\t\t</div>\r\n");
 
             
-            #line 34 "..\..\Views\Report\Index.cshtml"
-		}
+            #line 35 "..\..\Views\Report\Index.cshtml"
 	}
 	else
 	{
