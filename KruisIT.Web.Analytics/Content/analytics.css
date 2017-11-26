@@ -1,9 +1,9 @@
 ﻿
-.analytics-menu { background-color: rgb(221, 221, 221); left: 0; top: 0; bottom: 0; padding: 5px; }
-	.analytics-menu > div { display: inline-block; }
+.analytics-menu { background-color: rgb(221, 221, 221); left: 0; top: 0; bottom: 0; padding: 5px; overflow: hidden; }
+	.analytics-menu > div { display: inline-block; margin-left: -28px; margin-right: 20px; }
 
 	.analytics-menu h3 { display: inline-block; font-size: 16px; font-weight: bold; margin: 0 5px 0 20px; }
-		.analytics-menu div:not(:first-child) h3::before { content: "|"; margin-right: 20px; }
+		.analytics-menu div h3::before { content: "|"; margin-right: 20px; }
 	.analytics-menu select { }
 	.analytics-menu ul { display: inline-block; margin-top: 10px; padding-left: 0; list-style: none; }
 		.analytics-menu li { display: inline; }
