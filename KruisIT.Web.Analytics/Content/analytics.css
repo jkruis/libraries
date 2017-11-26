@@ -1,6 +1,6 @@
 ﻿
-.analytics-menu { background-color: rgb(221, 221, 221); left: 0; top: 0; bottom: 0; padding: 5px; overflow: hidden; }
-	.analytics-menu > div { display: inline-block; margin-left: -28px; margin-right: 20px; }
+.analytics-menu { background-color: rgb(221, 221, 221); left: 0; top: 0; bottom: 0; padding: 0 5px; overflow: hidden; }
+	.analytics-menu > div { display: inline-block; margin-left: -28px; margin-right: 20px; padding: 10px 0; }
 
 	.analytics-menu h3 { display: inline-block; font-size: 16px; font-weight: bold; margin: 0 5px 0 20px; }
 		.analytics-menu div h3::before { content: "|"; margin-right: 20px; }
@@ -11,7 +11,7 @@
 
 #analytics-filter-website { }
 
-#analytics-filter-location { height: 24px; margin-bottom: 30px; }
+#analytics-filter-location { height: 24px; }
 	#analytics-filter-location-value { border: none; padding-left: 6px; }
 	#analytics-filter-location .clear { background-color: inherit; border: none; font-size: 16px; margin-top: -23px; }
 

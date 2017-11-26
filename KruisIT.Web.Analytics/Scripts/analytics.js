@@ -169,7 +169,7 @@ function updateData() {
 	url += view + "?Website=" + website + "&Location=" + location;
 
 
-	document.getElementById("analytics-filter-location").style.display = ((location != "") ? "block" : "none");
+	document.getElementById("analytics-filter-location").style.display = ((location != "") ? "inline-block" : "none");
 
 	var request = new XMLHttpRequest();
 
