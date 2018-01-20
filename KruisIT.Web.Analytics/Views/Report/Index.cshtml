@@ -17,9 +17,9 @@
 	@if (Model.Data.Any())
 	{
 		<div id="analytics-filter-website">
-			<h3>website</h3>
 			@if (Model.Data.Count > 1)
 			{
+				<h3>website</h3>
 				<select id="analytics-filter-website-value">
 					@foreach (var site in Model.Data)
 					{
@@ -29,7 +29,7 @@
 			}
 			else
 			{
-				<span id="analytics-filter-website-value">@Model.Data.First()</span>
+				<span id="analytics-filter-website-value" style="display: none;">@Model.Data.First()</span>
 			}
 		</div>
 	}

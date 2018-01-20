@@ -129,22 +129,24 @@ WriteLiteral("\t\t<div");
 
 WriteLiteral(" id=\"analytics-filter-website\"");
 
-WriteLiteral(">\r\n\t\t\t<h3>website</h3>\r\n");
+WriteLiteral(">\r\n");
 
             
-            #line 21 "..\..\Views\Report\Index.cshtml"
+            #line 20 "..\..\Views\Report\Index.cshtml"
 			
             
             #line default
             #line hidden
             
-            #line 21 "..\..\Views\Report\Index.cshtml"
+            #line 20 "..\..\Views\Report\Index.cshtml"
              if (Model.Data.Count > 1)
 			{
 
             
             #line default
             #line hidden
+WriteLiteral("\t\t\t\t<h3>website</h3>\r\n");
+
 WriteLiteral("\t\t\t\t<select");
 
 WriteLiteral(" id=\"analytics-filter-website-value\"");
@@ -198,11 +200,13 @@ WriteLiteral("\t\t\t\t<span");
 
 WriteLiteral(" id=\"analytics-filter-website-value\"");
 
+WriteLiteral(" style=\"display: none;\"");
+
 WriteLiteral(">");
 
             
             #line 32 "..\..\Views\Report\Index.cshtml"
-                                                     Write(Model.Data.First());
+                                                                            Write(Model.Data.First());
 
             
             #line default
