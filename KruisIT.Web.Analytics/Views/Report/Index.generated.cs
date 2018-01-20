@@ -321,7 +321,11 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</div>\r\n</div>\r\n\r\n<div");
+WriteLiteral("</div>\r\n\t<div");
+
+WriteLiteral(" id=\"analytics-refresh\"");
+
+WriteLiteral(">&#8635;</div>\r\n</div>\r\n\r\n<div");
 
 WriteLiteral(" class=\"analytics-block\"");
 

@@ -13,7 +13,7 @@
 
 #analytics-filter-location { height: 24px; }
 	#analytics-filter-location-value { border: none; padding-left: 6px; }
-	#analytics-filter-location .clear { background-color: inherit; border: none; font-size: 16px; margin-top: -23px; }
+	#analytics-filter-location .clear { background-color: inherit; border: none; color: #999; font-size: 16px; margin-left: -22px; margin-top: -23px; }
 
 .analytics-block { margin-top: 20px; }
 
@@ -48,3 +48,6 @@ table.analytics-data { width: 100%; }
 .analytics-website { margin-bottom: 50px; }
 
 #analytics-base-url { display: none; }
+
+#analytics-refresh { cursor: pointer; float: right; font-size: 116%; font-weight: bold; margin-top: 1rem; }
+	#analytics-refresh:hover { color: #555; }

@@ -43,6 +43,10 @@ function Analytics_OnLoad(evt) {
 		updateData();
 	});
 
+	$("body").on("click", "#analytics-refresh", function () {
+		updateData();
+	});
+
 }
 
 function Analytics_OnResize(evt) {
