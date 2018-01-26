@@ -161,9 +161,9 @@ function setRightLabel(container) {
 		//console.log(lastCount);
 		//console.log(maxCount);
 
-		var mTop = 298 - (298 * lastCount / maxCount);
-		console.log(mTop);
-		labelRight.style.marginTop = mTop + "px";
+		//var mTop = 298 - (298 * lastCount / maxCount);
+		//console.log(mTop);
+		//labelRight.style.marginTop = mTop + "px";
 	}
 }
 
