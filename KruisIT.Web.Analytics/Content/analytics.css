@@ -51,3 +51,4 @@ table.analytics-data { width: 100%; }
 
 #analytics-refresh { cursor: pointer; float: right; font-size: 125%; font-weight: bold; margin-top: 1rem; margin-right: 1rem; padding: 1rem; }
 	#analytics-refresh:hover { color: #555; }
+	.analytics-refresh-active, .analytics-refresh-active:hover { color: #007fff !important; }

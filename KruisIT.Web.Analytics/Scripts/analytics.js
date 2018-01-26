@@ -44,9 +44,19 @@ function Analytics_OnLoad(evt) {
 	});
 
 	$("body").on("click", "#analytics-refresh", function () {
-		updateData();
-	});
+		var $button = $(this);
 
+		$button.addClass("analytics-refresh-active");
+
+		updateData().then(
+			function () {			
+				$button.removeClass("analytics-refresh-active");
+			},
+			function () { 
+				$button.removeClass("analytics-refresh-active");		
+			}
+		);
+	});
 }
 
 function Analytics_OnResize(evt) {
@@ -158,6 +168,7 @@ function setRightLabel(container) {
 }
 
 function updateData() {
+	var deferred = new $.Deferred();
 
 	var website = document.getElementById("analytics-filter-website-value").value;
 	if (typeof website == "undefined") {
@@ -183,16 +194,21 @@ function updateData() {
 				var target = document.getElementById("analytics-data");
 				target.innerHTML = request.responseText;
 				SizeDays();
+				deferred.resolve();
 			}
 			else if (request.status == 400) {
 				alert('There was an error 400');
+				deferred.reject();
 			}
 			else {
 				alert('something else other than 200 was returned');
+				deferred.reject();
 			}
 		}
 	};
 
 	request.open("GET", url, true);
 	request.send();
+
+	return deferred.promise();
 }
