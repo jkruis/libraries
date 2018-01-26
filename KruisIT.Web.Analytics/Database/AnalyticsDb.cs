@@ -36,7 +36,7 @@ namespace KruisIT.Web.Analytics.Database
 		public List<Models.Aggregate> GetVisitorsByDay(Models.Filter filter)
 		{
 			string sqlSelect = @"select StartTime as [Date], count(*) as [Count], null as Location from (
-									select distinct cast(StartTime as date) as [StartTime], IpAddress, Website, Location from Analytics_Visits
+									select distinct cast(StartTime as date) as [StartTime], IpAddress, Website from Analytics_Visits
 								) drv";
 			string sqlGroupBy = "group by StartTime";
 
