@@ -49,5 +49,5 @@ table.analytics-data { width: 100%; }
 
 #analytics-base-url { display: none; }
 
-#analytics-refresh { cursor: pointer; float: right; font-size: 116%; font-weight: bold; margin-top: 1rem; }
+#analytics-refresh { cursor: pointer; float: right; font-size: 125%; font-weight: bold; margin-top: 1rem; margin-right: 1rem; padding: 1rem; }
 	#analytics-refresh:hover { color: #555; }
