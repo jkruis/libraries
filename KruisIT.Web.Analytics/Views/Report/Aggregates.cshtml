@@ -12,7 +12,7 @@
 <div class="analytics-aggregates analytics-aggregates-rotated">
 
 	<span class="analytics-aggregates-y-label" id="analytics-aggregates-y-label-left">@maxCount</span>
-	<span class="analytics-aggregates-y-label" id="analytics-aggregates-y-label-right">@Model.Data.Last().Count</span>
+	<span class="analytics-aggregates-y-label" id="analytics-aggregates-y-label-right">@(Model.Data.Any() ? Model.Data.Last().Count : 0)</span>
 
 	<table>
 		<thead>

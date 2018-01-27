@@ -85,27 +85,9 @@ Write(ViewBag.Title);
             
             #line default
             #line hidden
-WriteLiteral("\r\n\t<small>\r\n");
+WriteLiteral("\r\n\t");
 
-WriteLiteral("\t\t");
-
-            
-            #line 12 "..\..\Views\Report\Index.cshtml"
-   Write(Model.Filter.StartDate.Value.ToString("yyyy-MM-dd"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" - ");
-
-            
-            #line 12 "..\..\Views\Report\Index.cshtml"
-                                                          Write(Model.Filter.EndDate.Value.ToString("yyyy-MM-dd"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n\t</small>\r\n</h2>\r\n\r\n<div");
+WriteLiteral("\r\n</h2>\r\n\r\n<div");
 
 WriteLiteral(" class=\"analytics-menu\"");
 
@@ -310,12 +292,52 @@ WriteLiteral(" for=\"vwMostViewed\"");
 
 WriteLiteral(">Most viewed</label></li>\r\n\t\t</ul>\r\n\t</div>\r\n\r\n\t<div");
 
+WriteLiteral(" id=\"analytics-filter-dates\"");
+
+WriteLiteral(">\r\n\t\t<h3>date</h3>\r\n\t\tfrom\r\n\t\t<input");
+
+WriteLiteral(" id=\"analytics-filter-date-start\"");
+
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" placeholder=\"yyyy-MM-dd\"");
+
+WriteAttribute("value", Tuple.Create(" value=\"", 1743), Tuple.Create("\"", 1803)
+            
+            #line 59 "..\..\Views\Report\Index.cshtml"
+            , Tuple.Create(Tuple.Create("", 1751), Tuple.Create<System.Object, System.Int32>(Model.Filter.StartDate.Value.ToString("yyyy-MM-dd")
+            
+            #line default
+            #line hidden
+, 1751), false)
+);
+
+WriteLiteral(" />\r\n\t\tto\r\n\t\t<input");
+
+WriteLiteral(" id=\"analytics-filter-date-end\"");
+
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" placeholder=\"yyyy-MM-dd\"");
+
+WriteAttribute("value", Tuple.Create(" value=\"", 1891), Tuple.Create("\"", 1949)
+            
+            #line 61 "..\..\Views\Report\Index.cshtml"
+          , Tuple.Create(Tuple.Create("", 1899), Tuple.Create<System.Object, System.Int32>(Model.Filter.EndDate.Value.ToString("yyyy-MM-dd")
+            
+            #line default
+            #line hidden
+, 1899), false)
+);
+
+WriteLiteral(" />\r\n\t</div>\r\n\r\n\t<div");
+
 WriteLiteral(" id=\"analytics-base-url\"");
 
 WriteLiteral(">");
 
             
-            #line 56 "..\..\Views\Report\Index.cshtml"
+            #line 64 "..\..\Views\Report\Index.cshtml"
                              Write(ViewBag.Url);
 
             

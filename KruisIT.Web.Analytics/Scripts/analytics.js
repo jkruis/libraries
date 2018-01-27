@@ -99,6 +99,15 @@ function ActivateMenu() {
 		};
 	}
 
+	var dateFilter = document.getElementById("analytics-filter-dates");
+	var dateOptions = dateFilter.getElementsByTagName("input");
+
+	for (var i = 0; i < dateOptions.length; i++) {
+		dateOptions[i].onblur = function () {
+			updateData();
+		};
+	}
+
 	//var locationFilter = document.getElementById("analytics-filter-location-value");
 	//locationFilter.oninput = function (e) {
 	//	updateData();
@@ -177,12 +186,15 @@ function updateData() {
 
 	var view = document.querySelector('input[name=view]:checked').value
 	var location = document.getElementById("analytics-filter-location-value").value;
+	var startDate = document.getElementById("analytics-filter-date-start").value;
+	var endDate = document.getElementById("analytics-filter-date-end").value;
 
 	console.log("update: " + website + ", " + view + ", " + location)
 
 	var url = document.getElementById("analytics-base-url").innerHTML;
 	url += view + "?Website=" + website + "&Location=" + location;
-
+	if ("" != startDate) url += "&startDate=" + startDate;
+	if ("" != endDate) url += "&endDate=" + endDate;
 
 	document.getElementById("analytics-filter-location").style.display = ((location != "") ? "inline-block" : "none");
 

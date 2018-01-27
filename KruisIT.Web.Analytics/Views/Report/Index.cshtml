@@ -8,9 +8,9 @@
 
 <h2>
 	@ViewBag.Title
-	<small>
+	@*<small>
 		@Model.Filter.StartDate.Value.ToString("yyyy-MM-dd") - @Model.Filter.EndDate.Value.ToString("yyyy-MM-dd")
-	</small>
+	</small>*@
 </h2>
 
 <div class="analytics-menu">
@@ -51,6 +51,14 @@
 			<li><input type="radio" name="view" id="vwVisitors" value="Aggregates_Visitors" /><label for="vwVisitors">Visitors</label></li>
 			<li><input type="radio" name="view" id="vwMostViewed" value="MostViewed" /><label for="vwMostViewed">Most viewed</label></li>
 		</ul>
+	</div>
+
+	<div id="analytics-filter-dates">
+		<h3>date</h3>
+		from
+		<input id="analytics-filter-date-start" type="text" placeholder="yyyy-MM-dd" value="@Model.Filter.StartDate.Value.ToString("yyyy-MM-dd")" />
+		to
+		<input id="analytics-filter-date-end" type="text" placeholder="yyyy-MM-dd" value="@Model.Filter.EndDate.Value.ToString("yyyy-MM-dd")" />
 	</div>
 
 	<div id="analytics-base-url">@(ViewBag.Url)</div>
