@@ -349,6 +349,10 @@ WriteLiteral(" id=\"analytics-refresh\"");
 
 WriteLiteral(">&#8635;</div>\r\n</div>\r\n\r\n<div");
 
+WriteLiteral(" id=\"analytics-message\"");
+
+WriteLiteral("></div>\r\n\r\n<div");
+
 WriteLiteral(" class=\"analytics-block\"");
 
 WriteLiteral(">\r\n\t<div");

@@ -178,6 +178,7 @@ function setRightLabel(container) {
 
 function updateData() {
 	var deferred = new $.Deferred();
+	$("#analytics-message").html('');
 
 	var website = document.getElementById("analytics-filter-website-value").value;
 	if (typeof website == "undefined") {
@@ -209,11 +210,11 @@ function updateData() {
 				deferred.resolve();
 			}
 			else if (request.status == 400) {
-				alert('There was an error 400');
+				$("#analytics-message").html('There was an error 400');
 				deferred.reject();
 			}
 			else {
-				alert('something else other than 200 was returned');
+				$("#analytics-message").html('something else other than 200 was returned');
 				deferred.reject();
 			}
 		}

@@ -9,6 +9,8 @@
 		.analytics-menu li { display: inline; }
 		.analytics-menu ul label { font-weight: normal; margin-left: 0.5em; }
 
+#analytics-message { color: darkred; text-align: center; }
+
 #analytics-filter-website { }
 
 #analytics-filter-location { height: 24px; }
