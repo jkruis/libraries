@@ -302,14 +302,25 @@ WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" placeholder=\"yyyy-MM-dd\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1743), Tuple.Create("\"", 1803)
+WriteLiteral(" data-value=\"");
+
             
             #line 59 "..\..\Views\Report\Index.cshtml"
-            , Tuple.Create(Tuple.Create("", 1751), Tuple.Create<System.Object, System.Int32>(Model.Filter.StartDate.Value.ToString("yyyy-MM-dd")
+                                                                                            Write(Model.Filter.StartDate.Value.ToString("yyyy-MM-dd"));
+
             
             #line default
             #line hidden
-, 1751), false)
+WriteLiteral("\"");
+
+WriteAttribute("value", Tuple.Create(" value=\"", 1809), Tuple.Create("\"", 1869)
+            
+            #line 59 "..\..\Views\Report\Index.cshtml"
+                                                                              , Tuple.Create(Tuple.Create("", 1817), Tuple.Create<System.Object, System.Int32>(Model.Filter.StartDate.Value.ToString("yyyy-MM-dd")
+            
+            #line default
+            #line hidden
+, 1817), false)
 );
 
 WriteLiteral(" />\r\n\t\tto\r\n\t\t<input");
@@ -320,14 +331,25 @@ WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" placeholder=\"yyyy-MM-dd\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1891), Tuple.Create("\"", 1949)
+WriteLiteral(" data-value=\"");
+
             
             #line 61 "..\..\Views\Report\Index.cshtml"
-          , Tuple.Create(Tuple.Create("", 1899), Tuple.Create<System.Object, System.Int32>(Model.Filter.EndDate.Value.ToString("yyyy-MM-dd")
+                                                                                          Write(Model.Filter.EndDate.Value.ToString("yyyy-MM-dd"));
+
             
             #line default
             #line hidden
-, 1899), false)
+WriteLiteral("\"");
+
+WriteAttribute("value", Tuple.Create("  value=\"", 2021), Tuple.Create("\"", 2080)
+            
+            #line 61 "..\..\Views\Report\Index.cshtml"
+                                                                           , Tuple.Create(Tuple.Create("", 2030), Tuple.Create<System.Object, System.Int32>(Model.Filter.EndDate.Value.ToString("yyyy-MM-dd")
+            
+            #line default
+            #line hidden
+, 2030), false)
 );
 
 WriteLiteral(" />\r\n\t</div>\r\n\r\n\t<div");

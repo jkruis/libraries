@@ -1,4 +1,4 @@
-﻿var debug = true;
+﻿var debug = false;
 
 if (window.attachEvent) {
 	window.attachEvent('onload', Analytics_OnLoad);
@@ -104,7 +104,12 @@ function ActivateMenu() {
 
 	for (var i = 0; i < dateOptions.length; i++) {
 		dateOptions[i].onblur = function () {
-			updateData();
+			var $field = $(this);
+
+			if ($field.val() != $field.data("value")) {
+				updateData();
+				$field.data("value", $field.val());
+			}
 		};
 	}
 
