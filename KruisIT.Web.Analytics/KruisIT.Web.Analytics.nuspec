@@ -9,6 +9,7 @@
     <projectUrl>http://kruisit.nl/packages/kruisit.web.analytics</projectUrl>
     <description>$description$</description>
     <releaseNotes>
+2.5 Add startdate, enddate fields
 2.4 Fix a bug that calculated wrong values for Visitors
 2.3 Add a refresh button
 2.2 Add value label on the last day
