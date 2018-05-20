@@ -14,6 +14,8 @@ namespace KruisIT.Web.Analytics.Controllers
 
 	// todo : show referrer, user agent info. allow filtering.
 
+	// todo : create a line chart with http://www.chartjs.org/docs/#line-chart-example-usage
+
 	public class ReportController : Controller
 	{
 		Database.AnalyticsDb db;
@@ -97,35 +99,6 @@ namespace KruisIT.Web.Analytics.Controllers
 			return FindView("Index", model);
 		}
 
-		//public ActionResult Website(Models.Filter filter)
-		//{
-		//	filter = SetFilterDefaults(filter);
-
-		//	Models.Current<string> model = new Models.Current<string>() { Filter = filter, Data = filter.Website };
-
-		//	return FindView("Website", model);
-		//}
-
-		//public ActionResult Visitors(Models.Filter filter)
-		//{
-		//	filter = SetFilterDefaults(filter);
-
-		//	var visitors = FilteredVisits(filter).Select(v => new Models.Visitor() { Address = v.IpAddress, Website = filter.Website }).Distinct().OrderBy(v => v).ToList();
-		//	Models.CurrentList<Models.Visitor> model = new Models.CurrentList<Models.Visitor>() { Filter = filter, Data = visitors };
-
-		//	return FindView("Visitors", model);
-		//}
-
-		//public ActionResult Locations(Models.Filter filter)
-		//{
-		//	filter = SetFilterDefaults(filter);
-
-		//	var locations = FilteredVisits(filter).Select(v => new Models.Location() { Url = v.Location, Website = filter.Website }).Distinct().OrderBy(l => l).ToList();
-		//	Models.CurrentList<Models.Location> model = new Models.CurrentList<Models.Location>() { Filter = filter, Data = locations };
-
-		//	return FindView("Locations", model);
-		//}
-
 		public ActionResult MostViewed(Models.Filter filter)
 		{
 			int itemCount = 20;
@@ -136,9 +109,6 @@ namespace KruisIT.Web.Analytics.Controllers
 
 			return FindView("AggregatesList", model);
 		}
-
-		// todo : add UI for selecting period when Website is selected
-		// todo : create a line chart with http://www.chartjs.org/docs/#line-chart-example-usage
 
 		public ActionResult Aggregates_Visitors(Models.Filter filter)
 		{
