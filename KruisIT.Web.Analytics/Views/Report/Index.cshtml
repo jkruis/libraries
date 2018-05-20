@@ -56,9 +56,9 @@
 	<div id="analytics-filter-dates">
 		<h3>date</h3>
 		from
-		<input id="analytics-filter-date-start" type="text" placeholder="yyyy-MM-dd" data-value="@Model.Filter.StartDate.Value.ToString("yyyy-MM-dd")" value="@Model.Filter.StartDate.Value.ToString("yyyy-MM-dd")" />
+		<input id="analytics-filter-date-start" type="text" placeholder="yyyy-MM-dd" data-value="@(Model.Filter.StartDate.HasValue ? Model.Filter.StartDate.Value.ToString("yyyy-MM-dd") : "")" value="@(Model.Filter.StartDate.HasValue ? Model.Filter.StartDate.Value.ToString("yyyy-MM-dd") : "")" />
 		to
-		<input id="analytics-filter-date-end" type="text" placeholder="yyyy-MM-dd" data-value="@Model.Filter.EndDate.Value.ToString("yyyy-MM-dd")"  value="@Model.Filter.EndDate.Value.ToString("yyyy-MM-dd")" />
+		<input id="analytics-filter-date-end" type="text" placeholder="yyyy-MM-dd" data-value="@(Model.Filter.EndDate.HasValue ? Model.Filter.EndDate.Value.ToString("yyyy-MM-dd") : "")" value="@(Model.Filter.EndDate.HasValue ? Model.Filter.EndDate.Value.ToString("yyyy-MM-dd") : "")" />
 	</div>
 
 	<div id="analytics-base-url">@(ViewBag.Url)</div>

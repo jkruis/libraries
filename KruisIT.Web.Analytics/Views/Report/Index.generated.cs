@@ -306,21 +306,21 @@ WriteLiteral(" data-value=\"");
 
             
             #line 59 "..\..\Views\Report\Index.cshtml"
-                                                                                            Write(Model.Filter.StartDate.Value.ToString("yyyy-MM-dd"));
+                                                                                             Write(Model.Filter.StartDate.HasValue ? Model.Filter.StartDate.Value.ToString("yyyy-MM-dd") : "");
 
             
             #line default
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1809), Tuple.Create("\"", 1869)
+WriteAttribute("value", Tuple.Create(" value=\"", 1850), Tuple.Create("\"", 1951)
             
             #line 59 "..\..\Views\Report\Index.cshtml"
-                                                                              , Tuple.Create(Tuple.Create("", 1817), Tuple.Create<System.Object, System.Int32>(Model.Filter.StartDate.Value.ToString("yyyy-MM-dd")
+                                                                                                                        , Tuple.Create(Tuple.Create("", 1858), Tuple.Create<System.Object, System.Int32>(Model.Filter.StartDate.HasValue ? Model.Filter.StartDate.Value.ToString("yyyy-MM-dd") : ""
             
             #line default
             #line hidden
-, 1817), false)
+, 1858), false)
 );
 
 WriteLiteral(" />\r\n\t\tto\r\n\t\t<input");
@@ -335,21 +335,21 @@ WriteLiteral(" data-value=\"");
 
             
             #line 61 "..\..\Views\Report\Index.cshtml"
-                                                                                          Write(Model.Filter.EndDate.Value.ToString("yyyy-MM-dd"));
+                                                                                           Write(Model.Filter.EndDate.HasValue ? Model.Filter.EndDate.Value.ToString("yyyy-MM-dd") : "");
 
             
             #line default
             #line hidden
 WriteLiteral("\"");
 
-WriteAttribute("value", Tuple.Create("  value=\"", 2021), Tuple.Create("\"", 2080)
+WriteAttribute("value", Tuple.Create(" value=\"", 2142), Tuple.Create("\"", 2239)
             
             #line 61 "..\..\Views\Report\Index.cshtml"
-                                                                           , Tuple.Create(Tuple.Create("", 2030), Tuple.Create<System.Object, System.Int32>(Model.Filter.EndDate.Value.ToString("yyyy-MM-dd")
+                                                                                                                  , Tuple.Create(Tuple.Create("", 2150), Tuple.Create<System.Object, System.Int32>(Model.Filter.EndDate.HasValue ? Model.Filter.EndDate.Value.ToString("yyyy-MM-dd") : ""
             
             #line default
             #line hidden
-, 2030), false)
+, 2150), false)
 );
 
 WriteLiteral(" />\r\n\t</div>\r\n\r\n\t<div");

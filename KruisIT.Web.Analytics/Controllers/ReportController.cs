@@ -61,17 +61,13 @@ namespace KruisIT.Web.Analytics.Controllers
 		Models.Filter SetFilterDefaults(Models.Filter filter)
 		{
 			if (!String.IsNullOrEmpty(SiteName)) filter.Website = SiteName;
-
-			if (null == filter.EndDate) filter.EndDate = DateTime.Now;
-			if (null == filter.StartDate) filter.StartDate = filter.EndDate.Value.AddDays(-65);
-
 			return filter;
 		}
 
 		IQueryable<Models.Visit> FilteredVisits(Models.Filter filter)
 		{
-			DateTime startD = filter.StartDate.Value;
-			DateTime endD = filter.EndDate.Value.Date.AddDays(1);
+			DateTime startD = filter.StartDate.HasValue ? filter.StartDate.Value : DateTime.Now.AddDays(-65);
+			DateTime endD = filter.EndDate.HasValue ? filter.EndDate.Value.Date.AddDays(1) : DateTime.Now;
 
 			var visits = db.Analytics_Visits.Where(v =>
 				v.StartTime > startD
