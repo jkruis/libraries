@@ -1,20 +1,16 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>C:\projects\KruisIT\libraries\Solution\KruisIT.ObjectExtensions\</id>
-    <version>1.0.0</version>
-    <authors>jkruis</authors>
-    <owners>jkruis</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <id>KruisIT.ObjectExtensions</id>
+    <version>$version$</version>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <projectUrl>http://kruisit.nl/packages/kruisit.objectextensions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Package description</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright 2015</copyright>
-    <tags>Tag1 Tag2</tags>
-    <dependencies>
-      <dependency id="SampleDependency" version="1.0" />
-    </dependencies>
+    <description>$description$</description>
+    <releaseNotes>
+1.1 Add SourceLink    
+    </releaseNotes>
+    <copyright>Copyright 2018</copyright>
   </metadata>
 </package>
