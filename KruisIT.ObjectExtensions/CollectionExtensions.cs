@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KruisIT.Object.Extensions
+namespace KruisIT.ObjectExtensions
 {
     public static class CollectionExtensions
     {

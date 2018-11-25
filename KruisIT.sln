@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{9AD8CBCF-3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KruisIT.Data.Test", "KruisIT.Data.Test\KruisIT.Data.Test.csproj", "{949653C0-F69C-4133-A4AB-5B8776A24B93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KruisIT.Object.Extensions", "KruisIT.ObjectExtensions\KruisIT.Object.Extensions.csproj", "{A8DFBFCC-F5BA-4D23-911C-2D600B301F5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KruisIT.ObjectExtensions", "KruisIT.ObjectExtensions\KruisIT.ObjectExtensions.csproj", "{A8DFBFCC-F5BA-4D23-911C-2D600B301F5F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KruisIT.ObjectExtensions.Test", "KruisIT.ObjectExtensions.Test\KruisIT.ObjectExtensions.Test.csproj", "{B45CF4E7-F498-410A-B101-2941BAA27CEC}"
 EndProject

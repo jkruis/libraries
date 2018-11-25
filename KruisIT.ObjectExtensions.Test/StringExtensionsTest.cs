@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using KruisIT.Object.Extensions;
+using KruisIT.ObjectExtensions;
 
-namespace KruisIT.Object.Extensions.Test
+namespace KruisIT.ObjectExtensions.Test
 {
 	[TestClass]
 	public class StringExtensionsTest

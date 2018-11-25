@@ -56,7 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KruisIT.ObjectExtensions\KruisIT.Object.Extensions.csproj">
+    <ProjectReference Include="..\KruisIT.ObjectExtensions\KruisIT.ObjectExtensions.csproj">
       <Project>{a8dfbfcc-f5ba-4d23-911c-2d600b301f5f}</Project>
       <Name>KruisIT.Object.Extensions</Name>
     </ProjectReference>
